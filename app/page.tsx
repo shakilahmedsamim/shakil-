@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
+import FounderVideo from "@/components/FounderVideo";
 import TestimonialCard from "@/components/TestimonialCard";
 import { CheckIcon, LayersIcon, LinkIcon, TargetIcon } from "@/components/icons";
 
@@ -101,17 +102,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-border bg-white">
-            {/* Replace VIDEO_ID with the founder-led YouTube video the client supplies. */}
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
-              title={`Founder introduction video`}
-              loading="lazy"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+          <FounderVideo />
         </div>
       </section>
 

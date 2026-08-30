@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ImageIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Case Study",
@@ -91,12 +92,14 @@ export default function CaseStudyPage() {
                 {/* Placeholders for real before/after screenshots. Recommended: 1200x750px, WebP.
                     Alt text convention: "<industry> Google Ads account before tracking fix, showing <metric>"
                     and "<industry> Google Ads account after tracking fix, showing <metric>". */}
-                <div className="rounded-xl border border-dashed border-border bg-background flex items-center justify-center aspect-[16/10]">
+                <div className="rounded-xl border border-dashed border-border bg-background flex flex-col items-center justify-center gap-2 aspect-[16/10]">
+                  <ImageIcon className="w-6 h-6 text-neutral" />
                   <span className="caption-copy px-4 text-center">
                     {study.id}-before.png (1200x750)
                   </span>
                 </div>
-                <div className="rounded-xl border border-dashed border-border bg-background flex items-center justify-center aspect-[16/10]">
+                <div className="rounded-xl border border-dashed border-border bg-background flex flex-col items-center justify-center gap-2 aspect-[16/10]">
+                  <ImageIcon className="w-6 h-6 text-neutral" />
                   <span className="caption-copy px-4 text-center">
                     {study.id}-after.png (1200x750)
                   </span>

@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   description:
     "Google Ads and Meta Ads management with full online and offline conversion tracking for local service businesses and B2B companies in the UK, US, and Canada.",
   alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: `${site.name} | Google Ads, Meta Ads and Conversion Tracking`,
+    description:
+      "Google Ads and Meta Ads management with full online and offline conversion tracking for local service businesses and B2B companies in the UK, US, and Canada.",
+    url: site.url,
+  },
+  twitter: {
+    card: "summary",
+    title: `${site.name} | Google Ads, Meta Ads and Conversion Tracking`,
+    description:
+      "Google Ads and Meta Ads management with full online and offline conversion tracking for local service businesses and B2B companies in the UK, US, and Canada.",
+  },
 };
 
 export const viewport: Viewport = {
