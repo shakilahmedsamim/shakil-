@@ -94,10 +94,10 @@ export default function ReviewsSection() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="rounded-2xl bg-ink p-8 flex flex-col justify-between gap-6">
           <p className="text-white text-[19px] md:text-[21px] leading-relaxed">
-            &quot;His expertise in conversion tracking, data accuracy, and
+            His expertise in conversion tracking, data accuracy, and
             platform integrations is outstanding. He quickly identifies
             issues others miss and implements clean, reliable tracking that
-            gives real clarity on performance.&quot;
+            gives real clarity on performance.
           </p>
           <div>
             <p className="text-white font-semibold">Yarne de Win</p>
@@ -122,7 +122,7 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {platformReviews.map((review) => (
           <div
             key={review.title}
@@ -138,10 +138,10 @@ export default function ReviewsSection() {
 
             <div className="flex flex-col gap-2">
               <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
-              <p className="body-copy text-neutral">&quot;{review.quote}&quot;</p>
+              <p className="body-copy text-neutral">{review.quote}</p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 mt-auto">
               <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent font-semibold text-[13px] shrink-0">
                 {review.initials}
               </span>
