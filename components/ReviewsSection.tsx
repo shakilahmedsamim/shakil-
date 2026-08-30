@@ -122,11 +122,11 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
         {platformReviews.map((review) => (
           <div
             key={review.title}
-            className="rounded-2xl bg-white border border-border p-6 flex flex-col gap-4"
+            className="rounded-2xl bg-white border border-border p-7 flex flex-col gap-5"
           >
             <div className="flex items-center justify-between">
               <PlatformBadge platform={review.platform} />
@@ -136,10 +136,12 @@ export default function ReviewsSection() {
               </div>
             </div>
 
-            <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
-            <p className="body-copy text-neutral flex-1">&quot;{review.quote}&quot;</p>
+            <div className="flex flex-col gap-2">
+              <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
+              <p className="body-copy text-neutral">&quot;{review.quote}&quot;</p>
+            </div>
 
-            <div className="flex items-center gap-3 pt-2 border-t border-border">
+            <div className="flex items-center gap-3">
               <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent font-semibold text-[13px] shrink-0">
                 {review.initials}
               </span>
