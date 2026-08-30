@@ -5,7 +5,6 @@ type PlatformReview = {
   rating: number;
   title: string;
   quote: string;
-  tag: string;
   initials: string;
   reviewerName: string;
   reviewerSubtitle: string;
@@ -18,7 +17,6 @@ const platformReviews: PlatformReview[] = [
     title: "TikTok Ads Manager Pixel Setup & First Ad Launch",
     quote:
       "Shakil has helped me to setup my TikTok Pixel and configured it with GTM. He is someone who I can rely on for my future projects regarding GTM and GA4 Tracking Setup.",
-    tag: "Pixel + GTM configured",
     initials: "UC",
     reviewerName: "Upwork Client",
     reviewerSubtitle: "TikTok Pixel & GTM setup",
@@ -28,7 +26,6 @@ const platformReviews: PlatformReview[] = [
     rating: 5.0,
     title: "Tracking analytics and data",
     quote: "Great skills, helped a lot with Facebook and Meta ads tracking. Highly recommend.",
-    tag: "Meta tracking fixed",
     initials: "MA",
     reviewerName: "Meta Ads Client",
     reviewerSubtitle: "Tracking analytics and data",
@@ -38,7 +35,6 @@ const platformReviews: PlatformReview[] = [
     rating: 5.0,
     title: "Facebook CRM and Conversion API Configuration",
     quote: "Great work! Thank you.",
-    tag: "CRM + CAPI connected",
     initials: "CC",
     reviewerName: "CRM Client",
     reviewerSubtitle: "Facebook CAPI configuration",
@@ -48,7 +44,6 @@ const platformReviews: PlatformReview[] = [
     rating: 5.0,
     title: "Conversions API & Catalog Setup",
     quote: "Good work done. Appreciate it.",
-    tag: "Catalog signal improved",
     initials: "CS",
     reviewerName: "Catalog Setup Client",
     reviewerSubtitle: "Conversions API specialist",
@@ -59,7 +54,6 @@ const platformReviews: PlatformReview[] = [
     title: "GTM, Analytics & Pinterest Conversion Tracking",
     quote:
       "Shakil was absolutely fantastic. He is very technical and good at his job. He knows everything about Google Tag Manager, Google Analytics and conversions linking this to Pinterest.",
-    tag: "Analytics + Pinterest setup",
     initials: "U",
     reviewerName: "umedrahman96",
     reviewerSubtitle: "United Kingdom",
@@ -70,7 +64,6 @@ const platformReviews: PlatformReview[] = [
     title: "API Setup Collaboration",
     quote:
       "He has very deep knowledge to set up the API. I am impressed by his technical skillset and his collaboration. I will get back to you soon.",
-    tag: "API tracking support",
     initials: "I",
     reviewerName: "itsharry27",
     reviewerSubtitle: "Pakistan",
@@ -145,10 +138,6 @@ export default function ReviewsSection() {
 
             <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
             <p className="body-copy text-neutral flex-1">&quot;{review.quote}&quot;</p>
-
-            <span className="caption-copy w-fit px-2.5 py-1 rounded-full bg-success/10 text-success">
-              {review.tag}
-            </span>
 
             <div className="flex items-center gap-3 pt-2 border-t border-border">
               <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent font-semibold text-[13px] shrink-0">
