@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAFAFA;
+  color: #1D1D1F;
+}
+
+@layer components {
+  .section {
+    @apply py-14 md:py-24 px-6;
+  }
+
+  .content-wrap {
+    @apply max-w-content mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-btn bg-accent px-6 py-3.5 text-white font-medium text-[17px] transition-transform duration-150 ease-out hover:scale-[1.02] active:scale-[0.99] min-h-[44px];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-btn border-2 border-accent px-6 py-3.5 text-accent font-medium text-[17px] bg-transparent transition-transform duration-150 ease-out hover:scale-[1.02] min-h-[44px];
+  }
+
+  .h1-style {
+    @apply text-hero-mobile md:text-hero-desktop text-ink;
+  }
+
+  .h2-style {
+    @apply text-h2-mobile md:text-h2-desktop text-ink;
+  }
+
+  .h3-style {
+    @apply text-h3-mobile md:text-h3-desktop text-ink;
+  }
+
+  .body-copy {
+    @apply text-body-mobile md:text-body text-ink;
+  }
+
+  .body-lg-copy {
+    @apply text-body-lg-mobile md:text-body-lg text-ink;
+  }
+
+  .caption-copy {
+    @apply text-caption text-neutral;
+  }
+
+  .form-field {
+    @apply flex flex-col gap-2 text-[15px] font-medium text-ink;
+  }
+
+  .form-input {
+    @apply w-full rounded-btn border border-border bg-white px-4 py-3 text-[16px] text-ink placeholder:text-neutral focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px];
+  }
+}

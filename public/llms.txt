@@ -1,0 +1,30 @@
+# Tracking Guru
+
+> Google Ads and Meta Ads management with full online and offline
+> conversion tracking, for local service businesses and B2B companies in
+> the United Kingdom, United States, and Canada.
+
+## What we do
+
+Tracking Guru sets up and manages Google Ads and Meta Ads campaigns, and
+builds the conversion tracking behind them: Google tag and GA4 event
+tracking, Enhanced Conversions for Leads, Meta Pixel and Conversions API
+with event deduplication, server-side tagging (server-side GTM, typically
+hosted on Stape.io), and offline conversion imports that connect a
+CRM-closed deal back to the ad click that originally drove it.
+
+## Who we serve
+
+Local service businesses (HVAC, plumbing, home services) and B2B
+companies (professional and managed services), plus law firms and medical
+aesthetics practices, operating in the UK, US, and Canada.
+
+## Key pages
+
+- Home: /
+- About: /about/
+- Services: /services/
+- Case Study: /case-study/
+- Contact: /contact/
+- Book a Free Call: /book-a-call/
+- Privacy Policy: /privacy-policy/

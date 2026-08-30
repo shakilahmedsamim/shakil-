@@ -1,0 +1,59 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "#FAFAFA",
+        ink: "#1D1D1F",
+        accent: "#0066FF",
+        "accent-dark": "#0052CC",
+        neutral: "#6E6E73",
+        success: "#0A7D4F",
+        border: "#E5E5E7",
+      },
+      fontFamily: {
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Inter",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
+      },
+      fontSize: {
+        "hero-desktop": ["56px", { lineHeight: "1.4", fontWeight: "600" }],
+        "hero-mobile": ["34px", { lineHeight: "1.4", fontWeight: "600" }],
+        "h2-desktop": ["40px", { lineHeight: "1.4", fontWeight: "600" }],
+        "h2-mobile": ["28px", { lineHeight: "1.4", fontWeight: "600" }],
+        "h3-desktop": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+        "h3-mobile": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+        "body-lg": ["19px", { lineHeight: "1.6" }],
+        "body-lg-mobile": ["17px", { lineHeight: "1.6" }],
+        body: ["17px", { lineHeight: "1.6" }],
+        "body-mobile": ["16px", { lineHeight: "1.6" }],
+        caption: ["13px", { lineHeight: "1.4", fontWeight: "500" }],
+      },
+      maxWidth: {
+        content: "1200px",
+        prose: "70ch",
+      },
+      spacing: {
+        "section-desktop": "96px",
+        "section-mobile": "56px",
+      },
+      borderRadius: {
+        btn: "8px",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
