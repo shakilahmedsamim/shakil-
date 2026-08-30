@@ -3,7 +3,7 @@ import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import FounderVideo from "@/components/FounderVideo";
-import TestimonialCard from "@/components/TestimonialCard";
+import ReviewsSection from "@/components/ReviewsSection";
 import { CheckIcon, LayersIcon, LinkIcon, TargetIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -136,27 +136,7 @@ export default function HomePage() {
       <section className="section">
         <div className="content-wrap px-6">
           <h2 className="h2-style text-center mb-10">What Clients Say</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Placeholder cards: client to supply real quotes, names, business names, and cities before launch. Do not fabricate. */}
-            <TestimonialCard
-              quote="[Client to supply a real, specific quote]"
-              name="[Client name]"
-              business="[Business name]"
-              location="[City]"
-            />
-            <TestimonialCard
-              quote="[Client to supply a real, specific quote]"
-              name="[Client name]"
-              business="[Business name]"
-              location="[City]"
-            />
-            <TestimonialCard
-              quote="[Client to supply a real, specific quote]"
-              name="[Client name]"
-              business="[Business name]"
-              location="[City]"
-            />
-          </div>
+          <ReviewsSection />
         </div>
       </section>
 
