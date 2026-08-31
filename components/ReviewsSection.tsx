@@ -1,4 +1,4 @@
-import { StarIcon } from "./icons";
+import { FiverrLogo, StarIcon, UpworkLogo } from "./icons";
 
 type PlatformReview = {
   platform: "Upwork" | "Fiverr";
@@ -81,8 +81,10 @@ function Stars({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 function PlatformBadge({ platform }: { platform: "Upwork" | "Fiverr" }) {
+  const Logo = platform === "Upwork" ? UpworkLogo : FiverrLogo;
   return (
-    <span className="caption-copy px-2.5 py-1 rounded-full bg-background border border-border">
+    <span className="caption-copy flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background border border-border text-ink">
+      <Logo className="w-3.5 h-3.5" />
       {platform}
     </span>
   );
