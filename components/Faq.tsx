@@ -15,12 +15,29 @@ export default function Faq({ items }: { items: FaqItem[] }) {
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col">
       {items.map((item) => (
-        <div key={item.question} className="border-b border-border pb-6">
-          <h3 className="h3-style mb-2">{item.question}</h3>
-          <p className="body-copy text-neutral">{item.answer}</p>
-        </div>
+        <details key={item.question} className="group border-b border-border py-5">
+          <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
+            <h3 className="h3-style !text-[19px] md:!text-[19px]">{item.question}</h3>
+            <span className="shrink-0 w-6 h-6 flex items-center justify-center text-accent">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4 transition-transform duration-200 group-open:rotate-45"
+                aria-hidden="true"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </span>
+          </summary>
+          <p className="body-copy text-neutral mt-3">{item.answer}</p>
+        </details>
       ))}
       <script
         type="application/ld+json"

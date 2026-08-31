@@ -4,7 +4,14 @@ import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import FounderVideo from "@/components/FounderVideo";
 import ReviewsSection from "@/components/ReviewsSection";
-import { CheckIcon, LayersIcon, LinkIcon, TargetIcon } from "@/components/icons";
+import {
+  BarChartIcon,
+  CheckIcon,
+  LayersIcon,
+  LinkIcon,
+  ShieldIcon,
+  TargetIcon,
+} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Google Ads Management and Conversion Tracking Agency",
@@ -36,6 +43,15 @@ const valueProps = [
     heading: "Tracking That Covers Every Platform You Run",
     body: "We manage Google Ads directly, but your conversion data usually needs to reach more than one platform. We build and maintain tracking for Meta, TikTok, and Pinterest too, even on ad accounts we don't manage.",
   },
+];
+
+const benefitIcons = [
+  { icon: TargetIcon, label: "Accurate Attribution" },
+  { icon: LayersIcon, label: "Fewer Wasted Clicks" },
+  { icon: LinkIcon, label: "Cross-Platform Tracking" },
+  { icon: ShieldIcon, label: "Survives Ad Blockers" },
+  { icon: BarChartIcon, label: "Clear Monthly Reporting" },
+  { icon: CheckIcon, label: "Real Revenue Data" },
 ];
 
 const steps = [
@@ -104,6 +120,21 @@ export default function HomePage() {
           </div>
 
           <FounderVideo />
+        </div>
+      </section>
+
+      <section className="pb-10 md:pb-14">
+        <div className="content-wrap px-6">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-4">
+            {benefitIcons.map((benefit) => (
+              <div key={benefit.label} className="flex flex-col items-center gap-2 text-center">
+                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
+                  <benefit.icon className="w-5 h-5" />
+                </span>
+                <span className="caption-copy">{benefit.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
