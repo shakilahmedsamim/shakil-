@@ -3,6 +3,7 @@ import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import FounderVideo from "@/components/FounderVideo";
+import HeroLeadForm from "@/components/HeroLeadForm";
 import ReviewsSection from "@/components/ReviewsSection";
 import {
   BarChartIcon,
@@ -119,6 +120,12 @@ export default function HomePage() {
             </div>
           </div>
 
+          <HeroLeadForm />
+        </div>
+      </section>
+
+      <section className="section pt-0 pb-10 md:pb-14">
+        <div className="content-wrap px-6 max-w-[720px] mx-auto">
           <FounderVideo />
         </div>
       </section>
