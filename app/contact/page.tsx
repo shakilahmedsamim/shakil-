@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get a free 30-minute Google Ads and Meta Ads audit. Book a call, message us on WhatsApp, or send your details directly.",
+    "Get a free 30-minute Google Ads and conversion tracking audit. Book a call, message us on WhatsApp, or send your details directly.",
   alternates: { canonical: "/contact/" },
 };
 

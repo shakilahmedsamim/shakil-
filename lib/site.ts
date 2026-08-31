@@ -1,6 +1,6 @@
 export const site = {
   name: "Tracking Guru",
-  tagline: "Google Ads and Meta Ads That Track Every Real Sale",
+  tagline: "Google Ads Management With Conversion Tracking That Proves Every Sale",
   url: "https://www.trackingguru.example",
   email: "hello@trackingguru.example",
   whatsappNumber: "8801843752280",

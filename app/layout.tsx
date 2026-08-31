@@ -9,25 +9,25 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Google Ads, Meta Ads and Conversion Tracking`,
+    default: `${site.name} | Google Ads Management and Conversion Tracking`,
     template: `%s | ${site.name}`,
   },
   description:
-    "Google Ads and Meta Ads management with full online and offline conversion tracking for local service businesses and B2B companies in the UK, US, and Canada.",
+    "Google Ads management with cross-platform conversion tracking (Google, Meta, TikTok, Pinterest) for local service businesses and B2B companies in the UK, US, and Canada.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} | Google Ads, Meta Ads and Conversion Tracking`,
+    title: `${site.name} | Google Ads Management and Conversion Tracking`,
     description:
-      "Google Ads and Meta Ads management with full online and offline conversion tracking for local service businesses and B2B companies in the UK, US, and Canada.",
+      "Google Ads management with cross-platform conversion tracking (Google, Meta, TikTok, Pinterest) for local service businesses and B2B companies in the UK, US, and Canada.",
     url: site.url,
   },
   twitter: {
     card: "summary",
-    title: `${site.name} | Google Ads, Meta Ads and Conversion Tracking`,
+    title: `${site.name} | Google Ads Management and Conversion Tracking`,
     description:
-      "Google Ads and Meta Ads management with full online and offline conversion tracking for local service businesses and B2B companies in the UK, US, and Canada.",
+      "Google Ads management with cross-platform conversion tracking (Google, Meta, TikTok, Pinterest) for local service businesses and B2B companies in the UK, US, and Canada.",
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     email: site.email,
     areaServed: ["United Kingdom", "United States", "Canada"],
     description:
-      "Google Ads and Meta Ads management with online and offline conversion tracking for local service businesses and B2B companies.",
+      "Google Ads management with cross-platform conversion tracking for local service businesses and B2B companies.",
     sameAs: [],
   };
 

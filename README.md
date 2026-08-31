@@ -1,7 +1,9 @@
 # Tracking Guru — Marketing Site
 
-Five-page Next.js (App Router) marketing site for a Google Ads / Meta Ads /
-conversion tracking agency serving clients in the UK, US, and Canada.
+Five-page Next.js (App Router) marketing site for a Google Ads management
+and cross-platform conversion tracking agency serving clients in the UK,
+US, and Canada. Google Ads is the only managed ad platform; conversion
+tracking is platform-agnostic and also covers Meta, TikTok, and Pinterest.
 
 ## Stack
 
@@ -43,7 +45,7 @@ npm run build
 - `case-study-01-before.png` / `case-study-01-after.png` (and so on) — Case
   Study screenshots, 1200x750px recommended
 - Real client testimonials, names, business names, and cities (Home page)
-- Real client logos / current Google Partner / Meta Business Partner badges
+- Real client logos / a current Google Partner badge
 - YouTube video ID for the homepage founder video (replace `VIDEO_ID` in
   `app/page.tsx`)
 - Final business name/branding to replace the "Tracking Guru" working name

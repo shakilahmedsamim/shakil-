@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const whatIDo = [
-  "Set up Google Ads and Meta Ads accounts so tracking is correct before the first dollar is spent",
+  "Set up and manage Google Ads accounts so tracking is correct before the first dollar is spent",
   "Diagnose and fix broken conversion tracking on existing accounts, so fewer leads get miscounted or lost",
   "Build offline conversion pipelines so a closed deal that started on a phone call still counts as a real conversion",
   "Report on cost per lead and cost per booked job in plain numbers, not platform-generated vanity metrics",
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3">
               <h1 className="h1-style">Who I Am</h1>
               <p className="body-lg-copy text-neutral">
-                I run Tracking Guru, a Google Ads, Meta Ads, and conversion
+                I run Tracking Guru, a Google Ads management and conversion
                 tracking agency working with local service businesses and
                 B2B companies across the UK, US, and Canada. [Client to
                 replace with a first-person paragraph naming real experience,

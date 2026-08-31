@@ -8,9 +8,9 @@ export default function Footer() {
         <div>
           <p className="text-[19px] font-semibold text-ink">{site.name}</p>
           <p className="caption-copy mt-3 max-w-[32ch]">
-            Google Ads, Meta Ads, and full online and offline conversion
-            tracking for local service businesses and B2B companies across
-            the {site.regions}.
+            Google Ads management and cross-platform conversion tracking for
+            local service businesses and B2B companies across the{" "}
+            {site.regions}.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
           <p className="caption-copy">
             &copy; {new Date().getFullYear()} {site.name}. Serving clients across the UK, US, and Canada.
           </p>
-          <p className="caption-copy">Google Partner &middot; Meta Business Partner</p>
+          <p className="caption-copy">Google Partner</p>
         </div>
       </div>
     </footer>

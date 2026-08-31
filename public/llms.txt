@@ -1,17 +1,19 @@
 # Tracking Guru
 
-> Google Ads and Meta Ads management with full online and offline
-> conversion tracking, for local service businesses and B2B companies in
-> the United Kingdom, United States, and Canada.
+> Google Ads management with full conversion tracking across every ad
+> platform a business runs, for local service businesses and B2B companies
+> in the United Kingdom, United States, and Canada.
 
 ## What we do
 
-Tracking Guru sets up and manages Google Ads and Meta Ads campaigns, and
-builds the conversion tracking behind them: Google tag and GA4 event
-tracking, Enhanced Conversions for Leads, Meta Pixel and Conversions API
-with event deduplication, server-side tagging (server-side GTM, typically
-hosted on Stape.io), and offline conversion imports that connect a
-CRM-closed deal back to the ad click that originally drove it.
+Tracking Guru sets up and manages Google Ads campaigns, and builds the
+conversion tracking behind them and behind any other platform a client
+advertises on: Google tag and GA4 event tracking, Enhanced Conversions for
+Leads, Meta Pixel and Conversions API with event deduplication, TikTok and
+Pinterest conversion tracking, server-side tagging (server-side GTM,
+typically hosted on Stape.io), and offline conversion imports that connect
+a CRM-closed deal back to the ad click that originally drove it. Meta,
+TikTok, and Pinterest ad campaigns are not managed directly, only tracked.
 
 ## Who we serve
 

@@ -6,7 +6,7 @@ import { CheckIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Google Ads and Meta Ads management plus full online and offline conversion tracking, including Enhanced Conversions, Conversions API, and server-side tagging.",
+    "Google Ads management plus full conversion tracking across every ad platform you run, including Enhanced Conversions, Meta and TikTok Conversions API, and server-side tagging.",
   alternates: { canonical: "/services/" },
 };
 
@@ -137,6 +137,11 @@ const comparisonRows = [
 
 const faqItems = [
   {
+    question: "Do you manage Meta Ads campaigns?",
+    answer:
+      "No, we manage Google Ads exclusively. Our conversion tracking service is platform-agnostic, so if you also run Meta, TikTok, or Pinterest ads, we can still build and maintain accurate tracking on those accounts even though we don't manage the campaigns themselves.",
+  },
+  {
     question: "What counts as a tracking audit checklist item?",
     answer:
       "A tracking audit checks whether an account is double-counting conversions, whether Enhanced Conversions is actually verified and not just switched on, and whether conversion values are real numbers instead of a flat placeholder value, since all three are common, silent causes of wasted ad spend.",
@@ -172,7 +177,7 @@ export default function ServicesPage() {
       <section className="section pt-0">
         <div className="content-wrap px-6 grid md:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
-            <h2 className="h3-style">Google Ads and Meta Ads Management</h2>
+            <h2 className="h3-style">Google Ads Management</h2>
             <ul className="flex flex-col gap-3">
               {campaignItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -181,6 +186,11 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
+            <p className="caption-copy border-t border-border pt-4 mt-1">
+              We manage Google Ads directly. If you also run Meta, TikTok, or
+              Pinterest ads, our conversion tracking service covers those
+              platforms too, even though we don&apos;t manage those campaigns.
+            </p>
           </div>
 
           <div className="bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">

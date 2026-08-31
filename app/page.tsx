@@ -7,15 +7,15 @@ import ReviewsSection from "@/components/ReviewsSection";
 import { CheckIcon, LayersIcon, LinkIcon, TargetIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Google Ads, Meta Ads and Conversion Tracking Agency",
+  title: "Google Ads Management and Conversion Tracking Agency",
   description:
-    "We build and manage Google Ads and Meta Ads campaigns with full online and offline conversion tracking for local service and B2B businesses in the UK, US, and Canada.",
+    "We build and manage Google Ads campaigns with full conversion tracking across every platform you advertise on, for local service and B2B businesses in the UK, US, and Canada.",
   alternates: { canonical: "/" },
 };
 
 const heroBullets = [
-  "Google Ads, Meta Ads, and cross-platform campaign management",
-  "Full online and offline conversion tracking, so closed deals feed back into your ad accounts",
+  "Google Ads campaign management, built and optimized for your market",
+  "Conversion tracking across every platform you advertise on, including Meta, TikTok, and Pinterest",
   "Server-side tracking setup that survives iOS privacy changes and ad blockers",
   "Transparent monthly reporting, no jargon, no vanity metrics",
 ];
@@ -33,8 +33,8 @@ const valueProps = [
   },
   {
     icon: LinkIcon,
-    heading: "One Team, Both Platforms",
-    body: "Google and Meta read signals differently. We manage both from one dashboard so your budget shifts to whichever platform is actually producing booked jobs, not whichever platform is easier to report on.",
+    heading: "Tracking That Covers Every Platform You Run",
+    body: "We manage Google Ads directly, but your conversion data usually needs to reach more than one platform. We build and maintain tracking for Meta, TikTok, and Pinterest too, even on ad accounts we don't manage.",
   },
 ];
 
@@ -75,13 +75,14 @@ export default function HomePage() {
         <div className="content-wrap grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
             <h1 className="h1-style">
-              Google Ads and Meta Ads That Track Every Real Sale, Not Just Every Click
+              Google Ads That Tracks Every Real Sale, Not Just Every Click
             </h1>
             <p className="body-lg-copy text-neutral">
-              We build and manage paid ad campaigns for local service
+              We build and manage Google Ads campaigns for local service
               businesses and B2B companies across the UK, US, and Canada,
-              with conversion tracking set up correctly from day one so your
-              budget goes toward what actually closes.
+              with conversion tracking set up correctly from day one, across
+              every ad platform you run, so your budget goes toward what
+              actually closes.
             </p>
             <ul className="flex flex-col gap-3">
               {heroBullets.map((bullet) => (
@@ -109,14 +110,14 @@ export default function HomePage() {
       <section className="section pt-0">
         <div className="content-wrap px-6">
           <p className="caption-copy text-center mb-6">
-            Certifications and platforms we work within
+            Certified on Google Ads, tracking built for every platform you run
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-80">
-            {/* Replace with real, current certification badges only once earned: Google Partner, Meta Business Partner. */}
+            {/* Replace with a real, current certification badge only once earned: Google Partner. */}
             <span className="text-[15px] font-medium text-neutral">Google Partner</span>
-            <span className="text-[15px] font-medium text-neutral">Meta Business Partner</span>
             <span className="text-[15px] font-medium text-neutral">Google Ads</span>
-            <span className="text-[15px] font-medium text-neutral">Meta Ads</span>
+            <span className="text-[15px] font-medium text-neutral">Meta Conversions API</span>
+            <span className="text-[15px] font-medium text-neutral">TikTok Pixel</span>
           </div>
         </div>
       </section>
