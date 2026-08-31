@@ -133,6 +133,31 @@ export function FiverrLogo({ className = "" }: { className?: string }) {
   );
 }
 
+/**
+ * Generic default-avatar glyph, the same convention LinkedIn, Upwork, and
+ * Fiverr themselves fall back to for a user with no uploaded photo. Used
+ * instead of a real photo for reviewers we have no actual likeness for,
+ * so the avatar never misrepresents what a real, identifiable person
+ * actually looks like.
+ */
+export function UserAvatarIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
 export function CloseIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">

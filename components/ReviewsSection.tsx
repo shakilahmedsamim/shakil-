@@ -1,11 +1,10 @@
-import { FiverrLogo, StarIcon, UpworkLogo } from "./icons";
+import { FiverrLogo, StarIcon, UpworkLogo, UserAvatarIcon } from "./icons";
 
 type PlatformReview = {
   platform: "Upwork" | "Fiverr";
   rating: number;
   title: string;
   quote: string;
-  initials: string;
   reviewerName: string;
   reviewerSubtitle: string;
 };
@@ -17,7 +16,6 @@ const platformReviews: PlatformReview[] = [
     title: "TikTok Ads Manager Pixel Setup & First Ad Launch",
     quote:
       "Shakil has helped me to setup my TikTok Pixel and configured it with GTM. He is someone who I can rely on for my future projects regarding GTM and GA4 Tracking Setup.",
-    initials: "UC",
     reviewerName: "Upwork Client",
     reviewerSubtitle: "TikTok Pixel & GTM setup",
   },
@@ -26,7 +24,6 @@ const platformReviews: PlatformReview[] = [
     rating: 5.0,
     title: "Tracking analytics and data",
     quote: "Great skills, helped a lot with Facebook and Meta ads tracking. Highly recommend.",
-    initials: "MA",
     reviewerName: "Meta Ads Client",
     reviewerSubtitle: "Tracking analytics and data",
   },
@@ -35,7 +32,6 @@ const platformReviews: PlatformReview[] = [
     rating: 5.0,
     title: "Facebook CRM and Conversion API Configuration",
     quote: "Great work! Thank you.",
-    initials: "CC",
     reviewerName: "CRM Client",
     reviewerSubtitle: "Facebook CAPI configuration",
   },
@@ -44,7 +40,6 @@ const platformReviews: PlatformReview[] = [
     rating: 5.0,
     title: "Conversions API & Catalog Setup",
     quote: "Good work done. Appreciate it.",
-    initials: "CS",
     reviewerName: "Catalog Setup Client",
     reviewerSubtitle: "Conversions API specialist",
   },
@@ -54,7 +49,6 @@ const platformReviews: PlatformReview[] = [
     title: "GTM, Analytics & Pinterest Conversion Tracking",
     quote:
       "Shakil was absolutely fantastic. He is very technical and good at his job. He knows everything about Google Tag Manager, Google Analytics and conversions linking this to Pinterest.",
-    initials: "U",
     reviewerName: "umedrahman96",
     reviewerSubtitle: "United Kingdom",
   },
@@ -64,7 +58,6 @@ const platformReviews: PlatformReview[] = [
     title: "API Setup Collaboration",
     quote:
       "He has very deep knowledge to set up the API. I am impressed by his technical skillset and his collaboration. I will get back to you soon.",
-    initials: "I",
     reviewerName: "itsharry27",
     reviewerSubtitle: "Pakistan",
   },
@@ -101,11 +94,16 @@ export default function ReviewsSection() {
             issues others miss and implements clean, reliable tracking that
             gives real clarity on performance.
           </p>
-          <div>
-            <p className="text-white font-semibold">Yarne de Win</p>
-            <p className="caption-copy !text-[#B0B0B5]">
-              Google Ads, CRO & Copywriting Specialist
-            </p>
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-white font-semibold">Yarne de Win</p>
+              <p className="caption-copy !text-[#B0B0B5]">
+                Google Ads, CRO & Copywriting Specialist
+              </p>
+            </div>
+            <span className="caption-copy !text-[#B0B0B5] px-2.5 py-1 rounded-full border border-white/20 shrink-0">
+              LinkedIn
+            </span>
           </div>
         </div>
 
@@ -144,8 +142,8 @@ export default function ReviewsSection() {
             </div>
 
             <div className="flex items-center gap-3 mt-auto">
-              <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent font-semibold text-[13px] shrink-0">
-                {review.initials}
+              <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent shrink-0">
+                <UserAvatarIcon className="w-5 h-5" />
               </span>
               <div>
                 <p className="text-[14px] font-medium text-ink">{review.reviewerName}</p>
