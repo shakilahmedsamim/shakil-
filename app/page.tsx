@@ -3,16 +3,9 @@ import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import FounderVideo from "@/components/FounderVideo";
+import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
-import {
-  ArrowRightIcon,
-  BarChartIcon,
-  CheckIcon,
-  LayersIcon,
-  LinkIcon,
-  ShieldIcon,
-  TargetIcon,
-} from "@/components/icons";
+import { ArrowRightIcon, LayersIcon, LinkIcon, TargetIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Google Ads Management and Conversion Tracking Agency",
@@ -43,15 +36,6 @@ const valueProps = [
     heading: "Tracking That Covers Every Platform You Run",
     body: "We manage Google Ads directly, but your conversion data usually needs to reach more than one platform. We build and maintain tracking for Meta, TikTok, and Pinterest too, even on ad accounts we don't manage.",
   },
-];
-
-const benefitIcons = [
-  { icon: TargetIcon, label: "Accurate Attribution" },
-  { icon: LayersIcon, label: "Fewer Wasted Clicks" },
-  { icon: LinkIcon, label: "Cross-Platform Tracking" },
-  { icon: ShieldIcon, label: "Survives Ad Blockers" },
-  { icon: BarChartIcon, label: "Clear Monthly Reporting" },
-  { icon: CheckIcon, label: "Real Revenue Data" },
 ];
 
 const steps = [
@@ -150,32 +134,12 @@ export default function HomePage() {
 
       <section className="pb-10 md:pb-14">
         <div className="content-wrap px-6">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-4">
-            {benefitIcons.map((benefit) => (
-              <div key={benefit.label} className="flex flex-col items-center gap-2 text-center">
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
-                  <benefit.icon className="w-5 h-5" />
-                </span>
-                <span className="caption-copy">{benefit.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section pt-0">
-        <div className="content-wrap px-6">
           <p className="caption-copy text-center mb-6">
-            Certified on Google Ads, tracking built for every platform you run
+            Platforms we build and verify tracking for
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-80">
-            {/* Replace with a real, current certification badge only once earned: Google Partner. */}
-            <span className="text-[15px] font-medium text-neutral">Google Partner</span>
-            <span className="text-[15px] font-medium text-neutral">Google Ads</span>
-            <span className="text-[15px] font-medium text-neutral">Meta Conversions API</span>
-            <span className="text-[15px] font-medium text-neutral">TikTok Pixel</span>
-          </div>
         </div>
+        <LogoMarquee />
+        {/* Add a real, current Google Partner badge near the nav or footer once earned; not a platform we track, so it stays out of this logo row. */}
       </section>
 
       <section className="section bg-white">
