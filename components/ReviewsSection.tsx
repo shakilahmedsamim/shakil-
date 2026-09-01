@@ -90,74 +90,77 @@ function PlatformBadge({ platform }: { platform: "Upwork" | "Fiverr" }) {
   );
 }
 
+const cardHover =
+  "transition-all duration-200 hover:-translate-y-1 hover:shadow-lg";
+
 export default function ReviewsSection() {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="rounded-2xl bg-ink p-8 flex flex-col justify-between gap-6">
-          <p className="text-white text-[19px] md:text-[21px] leading-relaxed">
-            His expertise in conversion tracking, data accuracy, and
-            platform integrations is outstanding. He quickly identifies
-            issues others miss and implements clean, reliable tracking that
-            gives real clarity on performance.
-          </p>
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-white font-semibold">Yarne de Win</p>
-              <p className="caption-copy !text-[#B0B0B5]">
-                Google Ads, CRO & Copywriting Specialist
-              </p>
-            </div>
-            <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white text-[13px] font-medium text-ink shrink-0">
-              <span className="flex" style={{ color: "#0A66C2" }}>
-                <LinkedInLogo className="w-3.5 h-3.5" />
-              </span>
-              LinkedIn
-            </span>
-          </div>
-        </div>
-
-        <div className="rounded-2xl bg-white border border-border p-8 flex flex-col justify-between gap-6">
-          <div className="flex flex-col gap-4">
-            <span className="caption-copy text-accent uppercase tracking-wide">
-              Multi-Platform Proof
-            </span>
-            <Stars className="w-5 h-5" />
-            <p className="body-lg-copy">
-              Clients hire me when their ad platforms need clean conversion
-              data, better event quality, and tracking they can trust before
-              scaling spend.
+    <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
+      <div
+        className={`shrink-0 w-[340px] sm:w-[380px] snap-start rounded-2xl bg-ink p-8 flex flex-col justify-between gap-6 ${cardHover}`}
+      >
+        <p className="text-white text-[19px] leading-relaxed">
+          His expertise in conversion tracking, data accuracy, and platform
+          integrations is outstanding. He quickly identifies issues others
+          miss and implements clean, reliable tracking that gives real
+          clarity on performance.
+        </p>
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-white font-semibold">Yarne de Win</p>
+            <p className="caption-copy !text-[#B0B0B5]">
+              Google Ads, CRO & Copywriting Specialist
             </p>
           </div>
+          <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white text-[13px] font-medium text-ink shrink-0">
+            <span className="flex" style={{ color: "#0A66C2" }}>
+              <LinkedInLogo className="w-3.5 h-3.5" />
+            </span>
+            LinkedIn
+          </span>
         </div>
       </div>
 
-      <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
-        {platformReviews.map((review) => (
-          <div
-            key={review.title}
-            className="shrink-0 w-[300px] sm:w-[340px] snap-start rounded-2xl bg-white border border-border p-7 flex flex-col gap-5"
-          >
-            <div className="flex items-center justify-between">
-              <PlatformBadge platform={review.platform} />
-              <div className="flex items-center gap-1.5">
-                <Stars />
-                <span className="caption-copy">{review.rating.toFixed(1)}</span>
-              </div>
-            </div>
+      <div
+        className={`shrink-0 w-[300px] sm:w-[340px] snap-start rounded-2xl bg-white border border-border p-8 flex flex-col justify-between gap-6 ${cardHover}`}
+      >
+        <div className="flex flex-col gap-4">
+          <span className="caption-copy text-accent uppercase tracking-wide">
+            Multi-Platform Proof
+          </span>
+          <Stars className="w-5 h-5" />
+          <p className="body-lg-copy">
+            Clients hire me when their ad platforms need clean conversion
+            data, better event quality, and tracking they can trust before
+            scaling spend.
+          </p>
+        </div>
+      </div>
 
-            <div className="flex flex-col gap-2">
-              <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
-              <p className="body-copy text-neutral">{review.quote}</p>
-            </div>
-
-            <div className="mt-auto">
-              <p className="text-[14px] font-medium text-ink">{review.reviewerName}</p>
-              <p className="caption-copy">{review.reviewerSubtitle}</p>
+      {platformReviews.map((review) => (
+        <div
+          key={review.title}
+          className={`shrink-0 w-[300px] sm:w-[340px] snap-start rounded-2xl bg-white border border-border p-7 flex flex-col gap-5 ${cardHover}`}
+        >
+          <div className="flex items-center justify-between">
+            <PlatformBadge platform={review.platform} />
+            <div className="flex items-center gap-1.5">
+              <Stars />
+              <span className="caption-copy">{review.rating.toFixed(1)}</span>
             </div>
           </div>
-        ))}
-      </div>
+
+          <div className="flex flex-col gap-2">
+            <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
+            <p className="body-copy text-neutral">{review.quote}</p>
+          </div>
+
+          <div className="mt-auto">
+            <p className="text-[14px] font-medium text-ink">{review.reviewerName}</p>
+            <p className="caption-copy">{review.reviewerSubtitle}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
