@@ -59,7 +59,9 @@ const config: Config = {
         },
       },
       animation: {
-        marquee: "marquee 28s linear infinite",
+        // 84s = 28s x 3, matching the tripled row width in LogoMarquee so
+        // the per-logo scroll speed stays the same as an untripled pass.
+        marquee: "marquee 84s linear infinite",
       },
     },
   },

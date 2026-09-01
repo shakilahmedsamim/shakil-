@@ -134,8 +134,8 @@ export default function HomePage() {
 
       <section className="pb-10 md:pb-14">
         <div className="content-wrap px-6">
-          <p className="caption-copy text-center mb-6">
-            Platforms we build and verify tracking for
+          <p className="caption-copy text-center uppercase tracking-wider text-accent mb-6">
+            Platforms We Build and Verify Tracking For
           </p>
         </div>
         <LogoMarquee />
