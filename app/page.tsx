@@ -5,7 +5,13 @@ import Faq from "@/components/Faq";
 import FounderVideo from "@/components/FounderVideo";
 import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
-import { ArrowRightIcon, LayersIcon, LinkIcon, TargetIcon } from "@/components/icons";
+import {
+  ArrowRightIcon,
+  LayersIcon,
+  LinkIcon,
+  ShieldCheckIcon,
+  TargetIcon,
+} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Google Ads Management and Conversion Tracking Agency",
@@ -133,10 +139,11 @@ export default function HomePage() {
       </section>
 
       <section className="pb-10 md:pb-14">
-        <div className="content-wrap px-6">
-          <p className="caption-copy text-center uppercase tracking-wider text-accent mb-6">
+        <div className="content-wrap px-6 flex justify-center mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border shadow-sm text-[14px] font-medium text-ink">
+            <ShieldCheckIcon className="w-4 h-4 text-accent" />
             Platforms We Build and Verify Tracking For
-          </p>
+          </span>
         </div>
         <LogoMarquee />
         {/* Add a real, current Google Partner badge near the nav or footer once earned; not a platform we track, so it stays out of this logo row. */}
