@@ -62,6 +62,10 @@ const config: Config = {
         // 84s = 28s x 3, matching the tripled row width in LogoMarquee so
         // the per-logo scroll speed stays the same as an untripled pass.
         marquee: "marquee 84s linear infinite",
+        // Separate, slower timing for the wider review cards in
+        // ReviewsSection, which only need a single duplicated pass (no
+        // tripling) since each card is already much wider than a logo.
+        "marquee-reviews": "marquee 50s linear infinite",
       },
     },
   },

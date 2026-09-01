@@ -90,14 +90,13 @@ function PlatformBadge({ platform }: { platform: "Upwork" | "Fiverr" }) {
   );
 }
 
-const cardHover =
-  "transition-all duration-200 hover:-translate-y-1 hover:shadow-lg";
+const cardHover = "transition-all duration-200 hover:-translate-y-1 hover:shadow-lg";
 
-export default function ReviewsSection() {
+function CardRow({ keyPrefix, ariaHidden = false }: { keyPrefix: string; ariaHidden?: boolean }) {
   return (
-    <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
+    <div className="flex gap-6 pr-6 shrink-0" aria-hidden={ariaHidden}>
       <div
-        className={`shrink-0 w-[340px] sm:w-[380px] snap-start rounded-2xl bg-ink p-8 flex flex-col justify-between gap-6 ${cardHover}`}
+        className={`shrink-0 w-[340px] sm:w-[380px] rounded-2xl bg-ink p-8 flex flex-col justify-between gap-6 ${cardHover}`}
       >
         <p className="text-white text-[19px] leading-relaxed">
           His expertise in conversion tracking, data accuracy, and platform
@@ -122,7 +121,7 @@ export default function ReviewsSection() {
       </div>
 
       <div
-        className={`shrink-0 w-[300px] sm:w-[340px] snap-start rounded-2xl bg-white border border-border p-8 flex flex-col justify-between gap-6 ${cardHover}`}
+        className={`shrink-0 w-[300px] sm:w-[340px] rounded-2xl bg-white border border-border p-8 flex flex-col justify-between gap-6 ${cardHover}`}
       >
         <div className="flex flex-col gap-4">
           <span className="caption-copy text-accent uppercase tracking-wide">
@@ -139,8 +138,8 @@ export default function ReviewsSection() {
 
       {platformReviews.map((review) => (
         <div
-          key={review.title}
-          className={`shrink-0 w-[300px] sm:w-[340px] snap-start rounded-2xl bg-white border border-border p-7 flex flex-col gap-5 ${cardHover}`}
+          key={`${keyPrefix}-${review.title}`}
+          className={`shrink-0 w-[300px] sm:w-[340px] rounded-2xl bg-white border border-border p-7 flex flex-col gap-5 ${cardHover}`}
         >
           <div className="flex items-center justify-between">
             <PlatformBadge platform={review.platform} />
@@ -161,6 +160,17 @@ export default function ReviewsSection() {
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+export default function ReviewsSection() {
+  return (
+    <div className="group overflow-hidden -mx-6 px-6 md:mx-0 md:px-0 [mask-image:linear-gradient(to_right,transparent,black_2%,black_98%,transparent)]">
+      <div className="flex w-max animate-marquee-reviews group-hover:[animation-play-state:paused] motion-reduce:animate-none pb-4">
+        <CardRow keyPrefix="a" />
+        <CardRow keyPrefix="b" ariaHidden />
+      </div>
     </div>
   );
 }
