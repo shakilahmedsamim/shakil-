@@ -7,8 +7,10 @@ import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
 import {
   ArrowRightIcon,
+  ClockIcon,
   LayersIcon,
   LinkIcon,
+  ReplyIcon,
   ShieldCheckIcon,
   TargetIcon,
 } from "@/components/icons";
@@ -21,9 +23,9 @@ export const metadata: Metadata = {
 };
 
 const heroStats = [
-  { value: "30 Min", label: "Free Strategy Call" },
-  { value: "1 Day", label: "Response Time" },
-  { value: "100%", label: "Tracking Verified" },
+  { icon: ClockIcon, value: "30 Min", label: "Free Strategy Call" },
+  { icon: ReplyIcon, value: "1 Day", label: "Response Time" },
+  { icon: ShieldCheckIcon, value: "100%", label: "Tracking Verified" },
 ];
 
 const valueProps = [
@@ -127,8 +129,9 @@ export default function HomePage() {
               {heroStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl bg-white border border-border p-4 text-center flex flex-col gap-1"
+                  className="rounded-2xl bg-white border border-border p-4 text-center flex flex-col items-center gap-1.5"
                 >
+                  <stat.icon className="w-5 h-5 text-accent" />
                   <span className="text-[22px] font-semibold text-accent">{stat.value}</span>
                   <span className="caption-copy leading-tight">{stat.label}</span>
                 </div>
