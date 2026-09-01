@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
-import { ArrowRightIcon, BarChartIcon, LayoutIcon, TargetIcon } from "@/components/icons";
+import { BarChartIcon, LayoutIcon, TargetIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -86,33 +86,6 @@ const landingPageItems = [
   {
     label: "Script Cleanup",
     description: "Chat widgets and extra tracking snippets audited and deferred so they don't slow down the page the ad paid for.",
-  },
-];
-
-const overviewCards = [
-  {
-    icon: TargetIcon,
-    title: "Google Ads Management",
-    description:
-      "Search and Local Services Ads campaigns built around calls and form submissions for your service area, not raw impressions.",
-    linkLabel: "See what's included",
-    href: "#google-ads-management",
-  },
-  {
-    icon: BarChartIcon,
-    title: "Conversion Tracking Setup",
-    description:
-      "Enhanced Conversions, server-side tagging, and offline imports, so every call, form, and closed deal is attributed to the ad that earned it.",
-    linkLabel: "See the full tracking stack",
-    href: "#conversion-tracking",
-  },
-  {
-    icon: LayoutIcon,
-    title: "Landing Page Optimization",
-    description:
-      "The page an ad sends traffic to gets checked for message match, load speed, and a single clear next step, not left as an afterthought.",
-    linkLabel: "See what we check",
-    href: "#landing-pages",
   },
 ];
 
@@ -259,41 +232,6 @@ export default function ServicesPage() {
             jobs. We handle both, so every dollar of spend can be traced to
             whether it produced a real, closed sale.
           </p>
-        </div>
-      </section>
-
-      <section className="section pt-0 pb-12">
-        <div className="content-wrap px-6">
-          <div className="flex justify-center mb-5">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
-              What We Offer
-            </span>
-          </div>
-          <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-10">
-            Google Ads, Tracking, and the Pages They Send Traffic To
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {overviewCards.map((card) => (
-              <div
-                key={card.title}
-                className="bg-white rounded-2xl border border-border p-6 flex flex-col gap-3"
-              >
-                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent">
-                  <card.icon className="w-5 h-5" />
-                </span>
-                <h3 className="h3-style !text-[19px]">{card.title}</h3>
-                <p className="body-copy text-neutral">{card.description}</p>
-                <a
-                  href={card.href}
-                  className="inline-flex items-center gap-1.5 text-[15px] font-medium text-accent hover:underline mt-1"
-                >
-                  {card.linkLabel}
-                  <ArrowRightIcon className="w-4 h-4" />
-                </a>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
