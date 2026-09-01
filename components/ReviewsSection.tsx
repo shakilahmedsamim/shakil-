@@ -1,4 +1,4 @@
-import { FiverrLogo, StarIcon, UpworkLogo, UserAvatarIcon } from "./icons";
+import { FiverrLogo, LinkedInLogo, StarIcon, UpworkLogo } from "./icons";
 
 type PlatformReview = {
   platform: "Upwork" | "Fiverr";
@@ -63,6 +63,11 @@ const platformReviews: PlatformReview[] = [
   },
 ];
 
+const platformStyles = {
+  Upwork: { Logo: UpworkLogo, color: "#6FDA44" },
+  Fiverr: { Logo: FiverrLogo, color: "#1DBF73" },
+};
+
 function Stars({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <div className="flex gap-0.5 text-success">
@@ -74,10 +79,12 @@ function Stars({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 function PlatformBadge({ platform }: { platform: "Upwork" | "Fiverr" }) {
-  const Logo = platform === "Upwork" ? UpworkLogo : FiverrLogo;
+  const { Logo, color } = platformStyles[platform];
   return (
-    <span className="caption-copy flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background border border-border text-ink">
-      <Logo className="w-3.5 h-3.5" />
+    <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-border shadow-sm text-[13px] font-medium text-ink">
+      <span className="flex" style={{ color }}>
+        <Logo className="w-3.5 h-3.5" />
+      </span>
       {platform}
     </span>
   );
@@ -101,7 +108,10 @@ export default function ReviewsSection() {
                 Google Ads, CRO & Copywriting Specialist
               </p>
             </div>
-            <span className="caption-copy !text-[#B0B0B5] px-2.5 py-1 rounded-full border border-white/20 shrink-0">
+            <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white text-[13px] font-medium text-ink shrink-0">
+              <span className="flex" style={{ color: "#0A66C2" }}>
+                <LinkedInLogo className="w-3.5 h-3.5" />
+              </span>
               LinkedIn
             </span>
           </div>
@@ -122,11 +132,11 @@ export default function ReviewsSection() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0">
         {platformReviews.map((review) => (
           <div
             key={review.title}
-            className="rounded-2xl bg-white border border-border p-7 flex flex-col gap-5"
+            className="shrink-0 w-[300px] sm:w-[340px] snap-start rounded-2xl bg-white border border-border p-7 flex flex-col gap-5"
           >
             <div className="flex items-center justify-between">
               <PlatformBadge platform={review.platform} />
@@ -141,14 +151,9 @@ export default function ReviewsSection() {
               <p className="body-copy text-neutral">{review.quote}</p>
             </div>
 
-            <div className="flex items-center gap-3 mt-auto">
-              <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent shrink-0">
-                <UserAvatarIcon className="w-5 h-5" />
-              </span>
-              <div>
-                <p className="text-[14px] font-medium text-ink">{review.reviewerName}</p>
-                <p className="caption-copy">{review.reviewerSubtitle}</p>
-              </div>
+            <div className="mt-auto">
+              <p className="text-[14px] font-medium text-ink">{review.reviewerName}</p>
+              <p className="caption-copy">{review.reviewerSubtitle}</p>
             </div>
           </div>
         ))}
