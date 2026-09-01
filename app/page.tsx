@@ -149,15 +149,27 @@ export default function HomePage() {
         {/* Add a real, current Google Partner badge near the nav or footer once earned; not a platform we track, so it stays out of this logo row. */}
       </section>
 
-      <section className="section bg-white">
-        <div className="content-wrap px-6 grid md:grid-cols-3 gap-8">
-          {valueProps.map((prop) => (
-            <div key={prop.heading} className="flex flex-col gap-4">
-              <prop.icon className="w-8 h-8 text-accent" />
-              <h3 className="h3-style">{prop.heading}</h3>
-              <p className="body-copy text-neutral">{prop.body}</p>
-            </div>
-          ))}
+      <section className="section">
+        <div className="content-wrap px-6">
+          <div className="max-w-[560px] mx-auto text-center mb-12">
+            <p className="caption-copy uppercase tracking-wider text-accent mb-3">Why It Works</p>
+            <h2 className="h2-style">Built for Accuracy, Not Just Activity</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {valueProps.map((prop) => (
+              <div
+                key={prop.heading}
+                className="bg-white rounded-2xl border border-border shadow-sm p-8 flex flex-col gap-4 transition-shadow hover:shadow-md"
+              >
+                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
+                  <prop.icon className="w-6 h-6" />
+                </span>
+                <h3 className="h3-style">{prop.heading}</h3>
+                <p className="body-copy text-neutral">{prop.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
