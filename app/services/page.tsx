@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
-import { CheckIcon } from "@/components/icons";
+import { ArrowRightIcon, BarChartIcon, CheckIcon, LayoutIcon, TargetIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -26,6 +26,41 @@ const trackingItems = [
   "Meta Pixel and Conversions API implementation with event deduplication",
   "Server-side tagging (server-side GTM) for accounts with meaningful spend, to recover conversions lost to browser tracking prevention",
   "Offline conversion imports, closing the loop between a phone call or in-person sale and the ad click that originally drove it",
+];
+
+const landingPageItems = [
+  "Headline and hero copy matched to the exact ad group or campaign the click came from, not one generic homepage for every ad",
+  "Core Web Vitals checked against real mobile field data, not just a lab score, since that is what actually affects Google Ads Quality Score and conversion rate",
+  "One clear call to action per screen, so a visitor is never asked to choose between two competing offers",
+  "Tap targets, forms, and the booking widget tested on an actual small screen, not just a resized browser window",
+  "Render-blocking scripts, such as chat widgets or extra tracking snippets, audited and deferred so they do not slow down the page the ad paid to send traffic to",
+];
+
+const overviewCards = [
+  {
+    icon: TargetIcon,
+    title: "Google Ads Management",
+    description:
+      "Search and Local Services Ads campaigns built around calls and form submissions for your service area, not raw impressions.",
+    linkLabel: "See what's included",
+    href: "#google-ads-management",
+  },
+  {
+    icon: BarChartIcon,
+    title: "Conversion Tracking Setup",
+    description:
+      "Enhanced Conversions, server-side tagging, and offline imports, so every call, form, and closed deal is attributed to the ad that earned it.",
+    linkLabel: "See the full tracking stack",
+    href: "#conversion-tracking",
+  },
+  {
+    icon: LayoutIcon,
+    title: "Landing Page Optimization",
+    description:
+      "The page an ad sends traffic to gets checked for message match, load speed, and a single clear next step, not left as an afterthought.",
+    linkLabel: "See what we check",
+    href: "#landing-pages",
+  },
 ];
 
 const industries = [
@@ -174,9 +209,44 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="section pt-0 pb-12">
+        <div className="content-wrap px-6">
+          <div className="flex justify-center mb-5">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
+              What We Offer
+            </span>
+          </div>
+          <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-10">
+            Google Ads, Tracking, and the Pages They Send Traffic To
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {overviewCards.map((card) => (
+              <div
+                key={card.title}
+                className="bg-white rounded-2xl border border-border p-6 flex flex-col gap-3"
+              >
+                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent">
+                  <card.icon className="w-5 h-5" />
+                </span>
+                <h3 className="h3-style !text-[19px]">{card.title}</h3>
+                <p className="body-copy text-neutral">{card.description}</p>
+                <a
+                  href={card.href}
+                  className="inline-flex items-center gap-1.5 text-[15px] font-medium text-accent hover:underline mt-1"
+                >
+                  {card.linkLabel}
+                  <ArrowRightIcon className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section pt-0">
-        <div className="content-wrap px-6 grid md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
+        <div className="content-wrap px-6 grid md:grid-cols-3 gap-6">
+          <div id="google-ads-management" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
             <h2 className="h3-style">Google Ads Management</h2>
             <ul className="flex flex-col gap-3">
               {campaignItems.map((item) => (
@@ -193,10 +263,22 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
+          <div id="conversion-tracking" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
             <h2 className="h3-style">Conversion Tracking (Online and Offline)</h2>
             <ul className="flex flex-col gap-3">
               {trackingItems.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
+                  <span className="body-copy">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div id="landing-pages" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
+            <h2 className="h3-style">Landing Page Optimization</h2>
+            <ul className="flex flex-col gap-3">
+              {landingPageItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
                   <span className="body-copy">{item}</span>
