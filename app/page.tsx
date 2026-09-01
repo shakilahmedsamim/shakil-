@@ -7,12 +7,12 @@ import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
 import {
   ArrowRightIcon,
-  BarChartIcon,
   ClockIcon,
-  LayoutIcon,
+  GoogleAdsLogo,
+  GoogleTagManagerLogo,
+  PageSpeedInsightsLogo,
   ReplyIcon,
   ShieldCheckIcon,
-  TargetIcon,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -30,7 +30,8 @@ const heroStats = [
 
 const offerCards = [
   {
-    icon: TargetIcon,
+    logo: GoogleAdsLogo,
+    color: "#4285F4",
     title: "Google Ads Management",
     description:
       "Search and Local Services Ads campaigns built around calls and form submissions for your service area, not raw impressions.",
@@ -38,7 +39,8 @@ const offerCards = [
     href: "/services/#google-ads-management",
   },
   {
-    icon: BarChartIcon,
+    logo: GoogleTagManagerLogo,
+    color: "#246FDB",
     title: "Conversion Tracking Setup",
     description:
       "Enhanced Conversions, server-side tagging, and offline imports, so every call, form, and closed deal is attributed to the ad that earned it.",
@@ -46,7 +48,8 @@ const offerCards = [
     href: "/services/#conversion-tracking",
   },
   {
-    icon: LayoutIcon,
+    logo: PageSpeedInsightsLogo,
+    color: "#4285F4",
     title: "Landing Page Optimization",
     description:
       "The page an ad sends traffic to gets checked for message match, load speed, and a single clear next step, not left as an afterthought.",
@@ -178,8 +181,11 @@ export default function HomePage() {
                 key={card.title}
                 className="bg-white rounded-2xl border border-border p-6 flex flex-col gap-3"
               >
-                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent">
-                  <card.icon className="w-5 h-5" />
+                <span
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-background"
+                  style={{ color: card.color }}
+                >
+                  <card.logo className="w-5 h-5" />
                 </span>
                 <h3 className="h3-style !text-[19px]">{card.title}</h3>
                 <p className="body-copy text-neutral">{card.description}</p>
