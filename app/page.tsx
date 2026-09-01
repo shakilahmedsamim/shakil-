@@ -209,17 +209,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-white overflow-hidden">
         <div className="content-wrap px-6">
-          <h2 className="h2-style text-center mb-10">How It Works</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {steps.map((step, i) => (
-              <div key={step.title} className="flex flex-col gap-2">
-                <span className="caption-copy text-accent">Step {i + 1}</span>
-                <h3 className="h3-style">{step.title}</h3>
-                <p className="body-copy text-neutral">{step.body}</p>
-              </div>
-            ))}
+          <h2 className="h2-style text-center mb-16">How It Works</h2>
+
+          <div className="relative">
+            <div className="hidden md:block absolute top-5 left-[12.5%] right-[12.5%] h-px bg-border overflow-hidden">
+              <span className="absolute top-1/2 -translate-y-1/2 h-8 w-24 -ml-12 rounded-full bg-gradient-to-r from-transparent via-accent/70 to-transparent blur-sm animate-flow-pulse" />
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-10 md:gap-8">
+              {steps.map((step, i) => (
+                <div key={step.title} className="relative flex flex-col gap-3">
+                  <span className="relative z-10 flex items-center justify-center w-10 h-10 rounded-full bg-accent text-white font-semibold text-[15px] shadow-sm">
+                    {i + 1}
+                  </span>
+                  <h3 className="h3-style">{step.title}</h3>
+                  <p className="body-copy text-neutral">{step.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

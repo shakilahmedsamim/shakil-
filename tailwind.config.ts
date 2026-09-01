@@ -57,6 +57,12 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "flow-pulse": {
+          "0%": { left: "-12%", opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { left: "108%", opacity: "0" },
+        },
       },
       animation: {
         // 84s = 28s x 3, matching the tripled row width in LogoMarquee so
@@ -66,6 +72,8 @@ const config: Config = {
         // ReviewsSection, which only need a single duplicated pass (no
         // tripling) since each card is already much wider than a logo.
         "marquee-reviews": "marquee 50s linear infinite",
+        // A signal travelling along the "How It Works" connector line.
+        "flow-pulse": "flow-pulse 3.5s ease-in-out infinite",
       },
     },
   },
