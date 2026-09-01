@@ -92,41 +92,42 @@ export default function HomePage() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border">
-                Google Ads Specialist
+                Google Ads Management
               </span>
               <span className="caption-copy px-3 py-1.5 rounded-full bg-success/10 text-success flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                Accepting New Clients
+                5.0 Rated on Upwork &amp; Fiverr
               </span>
             </div>
 
             <h1 className="h1-style">
-              More Leads. More Booked Jobs.
-              <br />
-              Google Ads You Can <span className="text-accent">Actually Trust.</span>
+              Know Exactly Which Ads Turn Into{" "}
+              <span className="text-accent">Paying Customers.</span>
             </h1>
 
             <p className="body-lg-copy text-neutral">
-              Google Ads built for local service and B2B businesses, with
-              conversion tracking set up correctly from day one, so you know
-              exactly which ads bring real customers.
+              We manage your Google Ads and build the tracking behind them,
+              so every dollar of spend can be traced back to a real, closed
+              sale, not just a click.
             </p>
 
             <div className="flex flex-col gap-3">
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
                 <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
-                  Book My Free Strategy Call
+                  Book My Free 30-Minute Audit
                   <ArrowRightIcon className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/case-study/"
                   className="inline-flex items-center gap-1.5 text-[16px] font-medium text-ink hover:text-accent transition-colors"
                 >
-                  View Case Studies
+                  See Real Client Results
                   <ArrowRightIcon className="w-4 h-4" />
                 </Link>
               </div>
-              <p className="caption-copy">Free, 30 minutes, no obligation.</p>
+              <p className="caption-copy">
+                No payment required, and no pressure to sign anything after.
+              </p>
             </div>
           </div>
 
