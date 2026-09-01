@@ -35,14 +35,10 @@ export default function FounderVideo() {
   }, []);
 
   return (
-    <div className="rounded-2xl overflow-hidden bg-ink shadow-xl">
-      <div className="flex items-center gap-1.5 h-8 px-4 bg-ink">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-      </div>
+    <div className="rounded-[28px] bg-white shadow-xl p-3">
       <div
         id={`vidalytics_embed_${EMBED_ID}`}
+        className="rounded-2xl overflow-hidden"
         style={{ width: "100%", position: "relative", paddingTop: "56.25%" }}
       />
     </div>
