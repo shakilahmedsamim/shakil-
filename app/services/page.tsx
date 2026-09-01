@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
-import { ArrowRightIcon, BarChartIcon, CheckIcon, LayoutIcon, TargetIcon } from "@/components/icons";
+import { ArrowRightIcon, BarChartIcon, LayoutIcon, TargetIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,29 +11,82 @@ export const metadata: Metadata = {
 };
 
 const campaignItems = [
-  "Account structure and campaign setup",
-  "Audience and keyword research",
-  "Ad creative and copywriting",
-  "Local Services Ads where applicable",
-  "Performance Max campaign management",
-  "Ongoing bid and budget optimization",
-  "Monthly reporting in plain language",
+  {
+    label: "Account Structure",
+    description:
+      "Organized by service line and location, not one broad catch-all campaign competing against itself.",
+  },
+  {
+    label: "Keyword & Audience Research",
+    description: "Built around what your actual customers search before they call, not guesswork.",
+  },
+  {
+    label: "Ad Creative & Copy",
+    description: "Written to match the exact offer on the landing page it sends traffic to.",
+  },
+  {
+    label: "Local Services Ads",
+    description:
+      "Set up and Google Guaranteed-verified where it fits your trade, since LSA leads often close faster than Search alone.",
+  },
+  {
+    label: "Performance Max",
+    description: "Managed with real feed and asset input, not left running on default settings.",
+  },
+  {
+    label: "Bid & Budget Optimization",
+    description: "Adjusted against actual booked jobs, not just platform-reported conversions.",
+  },
+  {
+    label: "Monthly Reporting",
+    description: "One page, plain language: what was spent, what closed, and what changes next.",
+  },
 ];
 
 const trackingItems = [
-  "Google tag and GA4 event tracking setup",
-  "Enhanced Conversions for Leads, combining GCLID with hashed contact data for more durable matching than legacy GCLID-only import",
-  "Meta Pixel and Conversions API implementation with event deduplication",
-  "Server-side tagging (server-side GTM) for accounts with meaningful spend, to recover conversions lost to browser tracking prevention",
-  "Offline conversion imports, closing the loop between a phone call or in-person sale and the ad click that originally drove it",
+  {
+    label: "Google Tag & GA4 Setup",
+    description: "Every meaningful action on your site turned into a real, trackable event.",
+  },
+  {
+    label: "Enhanced Conversions",
+    description: "GCLID paired with hashed contact data, so match rates hold up as browsers restrict cookies.",
+  },
+  {
+    label: "Cross-Platform Tracking",
+    description: "Meta Pixel and Conversions API implemented with event deduplication, even on accounts we don't manage.",
+  },
+  {
+    label: "Server-Side Tagging",
+    description: "A server GTM container for accounts with real spend, recovering conversions ad blockers would otherwise hide.",
+  },
+  {
+    label: "Offline Conversion Imports",
+    description: "A phone call or in-person sale still counts, fed back to the ad platform once it closes.",
+  },
 ];
 
 const landingPageItems = [
-  "Headline and hero copy matched to the exact ad group or campaign the click came from, not one generic homepage for every ad",
-  "Core Web Vitals checked against real mobile field data, not just a lab score, since that is what actually affects Google Ads Quality Score and conversion rate",
-  "One clear call to action per screen, so a visitor is never asked to choose between two competing offers",
-  "Tap targets, forms, and the booking widget tested on an actual small screen, not just a resized browser window",
-  "Render-blocking scripts, such as chat widgets or extra tracking snippets, audited and deferred so they do not slow down the page the ad paid to send traffic to",
+  {
+    label: "Message Match",
+    description: "Headline and hero copy tied to the exact ad group the click came from, not one homepage for every campaign.",
+  },
+  {
+    label: "Core Web Vitals",
+    description: "Checked against real mobile field data, since that's what actually moves Quality Score and conversion rate.",
+  },
+  {
+    label: "One Clear Action",
+    description: "A single call to action per screen, so no visitor has to choose between two competing offers.",
+  },
+  {
+    label: "Mobile Usability",
+    description: "Tap targets, forms, and the booking widget tested on an actual phone, not a resized browser window.",
+  },
+  {
+    label: "Script Cleanup",
+    description: "Chat widgets and extra tracking snippets audited and deferred so they don't slow down the page the ad paid for.",
+  },
 ];
 
 const overviewCards = [
@@ -245,14 +298,23 @@ export default function ServicesPage() {
       </section>
 
       <section className="section pt-0">
-        <div className="content-wrap px-6 grid md:grid-cols-3 gap-6">
-          <div id="google-ads-management" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
-            <h2 className="h3-style">Google Ads Management</h2>
-            <ul className="flex flex-col gap-3">
+        <div className="content-wrap px-6 grid md:grid-cols-3 gap-6 items-start">
+          <div id="google-ads-management" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
+                <TargetIcon className="w-5 h-5" />
+              </span>
+              <h2 className="h3-style">Google Ads Management</h2>
+            </div>
+            <p className="body-copy text-neutral">
+              We run your Search and Local Services Ads campaigns end to end,
+              from structure to daily bid decisions.
+            </p>
+            <ul className="flex flex-col gap-4">
               {campaignItems.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                  <span className="body-copy">{item}</span>
+                <li key={item.label} className="border-l-2 border-accent/25 pl-3">
+                  <p className="font-semibold text-ink text-[15px]">{item.label}</p>
+                  <p className="body-copy text-neutral">{item.description}</p>
                 </li>
               ))}
             </ul>
@@ -263,25 +325,43 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div id="conversion-tracking" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
-            <h2 className="h3-style">Conversion Tracking (Online and Offline)</h2>
-            <ul className="flex flex-col gap-3">
+          <div id="conversion-tracking" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
+                <BarChartIcon className="w-5 h-5" />
+              </span>
+              <h2 className="h3-style">Conversion Tracking</h2>
+            </div>
+            <p className="body-copy text-neutral">
+              Every real action on your site or account, online or offline,
+              built into an event your ad platform can actually bid on.
+            </p>
+            <ul className="flex flex-col gap-4">
               {trackingItems.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                  <span className="body-copy">{item}</span>
+                <li key={item.label} className="border-l-2 border-accent/25 pl-3">
+                  <p className="font-semibold text-ink text-[15px]">{item.label}</p>
+                  <p className="body-copy text-neutral">{item.description}</p>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div id="landing-pages" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-4">
-            <h2 className="h3-style">Landing Page Optimization</h2>
-            <ul className="flex flex-col gap-3">
+          <div id="landing-pages" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
+                <LayoutIcon className="w-5 h-5" />
+              </span>
+              <h2 className="h3-style">Landing Page Optimization</h2>
+            </div>
+            <p className="body-copy text-neutral">
+              The page your ad sends traffic to gets checked with the same
+              rigor as the campaign that leads to it.
+            </p>
+            <ul className="flex flex-col gap-4">
               {landingPageItems.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                  <span className="body-copy">{item}</span>
+                <li key={item.label} className="border-l-2 border-accent/25 pl-3">
+                  <p className="font-semibold text-ink text-[15px]">{item.label}</p>
+                  <p className="body-copy text-neutral">{item.description}</p>
                 </li>
               ))}
             </ul>
