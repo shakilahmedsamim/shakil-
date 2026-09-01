@@ -3,9 +3,9 @@ import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import FounderVideo from "@/components/FounderVideo";
-import HeroLeadForm from "@/components/HeroLeadForm";
 import ReviewsSection from "@/components/ReviewsSection";
 import {
+  ArrowRightIcon,
   BarChartIcon,
   CheckIcon,
   LayersIcon,
@@ -21,11 +21,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const heroBullets = [
-  "Google Ads campaign management, built and optimized for your market",
-  "Conversion tracking across every platform you advertise on, including Meta, TikTok, and Pinterest",
-  "Server-side tracking setup that survives iOS privacy changes and ad blockers",
-  "Transparent monthly reporting, no jargon, no vanity metrics",
+const heroStats = [
+  { value: "30 Min", label: "Free Strategy Call" },
+  { value: "1 Day", label: "Response Time" },
+  { value: "100%", label: "Tracking Verified" },
 ];
 
 const valueProps = [
@@ -91,42 +90,60 @@ export default function HomePage() {
       <section className="section pt-10 md:pt-16">
         <div className="content-wrap grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border">
+                Google Ads Specialist
+              </span>
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-success/10 text-success flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-success" />
+                Accepting New Clients
+              </span>
+            </div>
+
             <h1 className="h1-style">
-              Google Ads That Tracks Every Real Sale, Not Just Every Click
+              More Leads. More Booked Jobs.
+              <br />
+              Google Ads You Can <span className="text-accent">Actually Trust.</span>
             </h1>
+
             <p className="body-lg-copy text-neutral">
-              We build and manage Google Ads campaigns for local service
-              businesses and B2B companies across the UK, US, and Canada,
-              with conversion tracking set up correctly from day one, across
-              every ad platform you run, so your budget goes toward what
-              actually closes.
+              Google Ads built for local service and B2B businesses, with
+              conversion tracking set up correctly from day one, so you know
+              exactly which ads bring real customers.
             </p>
-            <ul className="flex flex-col gap-3">
-              {heroBullets.map((bullet) => (
-                <li key={bullet} className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                  <span className="body-copy">{bullet}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col gap-2">
-              <Link href="/book-a-call/" className="btn-primary w-fit">
-                Book Your Free 30-Minute Audit
-              </Link>
-              <p className="caption-copy">
-                No payment required. We will look at your current account and
-                tell you exactly what is costing you money.
-              </p>
+
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
+                  Book My Free Strategy Call
+                  <ArrowRightIcon className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/case-study/"
+                  className="inline-flex items-center gap-1.5 text-[16px] font-medium text-ink hover:text-accent transition-colors"
+                >
+                  View Case Studies
+                  <ArrowRightIcon className="w-4 h-4" />
+                </Link>
+              </div>
+              <p className="caption-copy">Free, 30 minutes, no obligation.</p>
             </div>
           </div>
 
-          <HeroLeadForm />
-        </div>
-      </section>
-
-      <section className="section pt-0 pb-10 md:pb-14">
-        <div className="content-wrap px-6 max-w-[720px] mx-auto">
-          <FounderVideo />
+          <div className="flex flex-col gap-4">
+            <FounderVideo />
+            <div className="grid grid-cols-3 gap-3">
+              {heroStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl bg-white border border-border p-4 text-center flex flex-col gap-1"
+                >
+                  <span className="text-[22px] font-semibold text-accent">{stat.value}</span>
+                  <span className="caption-copy leading-tight">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
