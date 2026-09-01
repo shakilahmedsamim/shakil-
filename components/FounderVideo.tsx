@@ -1,12 +1,51 @@
 "use client";
 
-import { useState } from "react";
-import { PlayIcon } from "./icons";
+import { useEffect, useRef, useState } from "react";
+import { PlayIcon, VolumeIcon, VolumeMuteIcon } from "./icons";
 
 const VIDEO_ID = "TlQmifdkX24";
 
+/**
+ * Autoplay-with-sound is blocked by every major browser's autoplay policy
+ * regardless of embed params, so this starts muted (the only reliable
+ * autoplay) and loops silently, with a small custom unmute control. YouTube
+ * embeds are also required by YouTube's own terms to stay identifiable, so
+ * this hides as much of the native player chrome as the embed API allows
+ * (no controls, no title/channel overlay, no related-video branding) rather
+ * than claiming to fully disguise the source.
+ */
 export default function FounderVideo() {
-  const [playing, setPlaying] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  const toggleMute = () => {
+    const iframe = iframeRef.current;
+    if (!iframe?.contentWindow) return;
+    const command = muted ? "unMute" : "mute";
+    iframe.contentWindow.postMessage(
+      JSON.stringify({ event: "command", func: command, args: [] }),
+      "*"
+    );
+    setMuted(!muted);
+  };
 
   if (!VIDEO_ID) {
     return (
@@ -24,32 +63,41 @@ export default function FounderVideo() {
     );
   }
 
+  const params = new URLSearchParams({
+    autoplay: "1",
+    mute: "1",
+    loop: "1",
+    playlist: VIDEO_ID,
+    controls: "0",
+    modestbranding: "1",
+    rel: "0",
+    iv_load_policy: "3",
+    disablekb: "1",
+    fs: "0",
+    playsinline: "1",
+    enablejsapi: "1",
+  });
+
   return (
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-border bg-white">
-      {!playing ? (
-        <button
-          type="button"
-          onClick={() => setPlaying(true)}
-          className="group absolute inset-0 w-full h-full flex items-center justify-center"
-          aria-label="Play founder introduction video"
-        >
-          <img
-            src={`https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`}
-            alt="Founder introduction video thumbnail"
-            className="absolute inset-0 w-full h-full object-cover"
+    <div ref={containerRef} className="relative w-full aspect-video rounded-2xl overflow-hidden border border-border bg-white">
+      {shouldLoad && (
+        <>
+          <iframe
+            ref={iframeRef}
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?${params.toString()}`}
+            title="Founder introduction video"
+            allow="autoplay; encrypted-media; picture-in-picture"
           />
-          <span className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-white/90 text-accent group-hover:scale-105 transition-transform">
-            <PlayIcon className="w-7 h-7 ml-1" />
-          </span>
-        </button>
-      ) : (
-        <iframe
-          className="w-full h-full"
-          src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1`}
-          title="Founder introduction video"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+          <button
+            type="button"
+            onClick={toggleMute}
+            aria-label={muted ? "Unmute video" : "Mute video"}
+            className="absolute bottom-3 right-3 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-ink/70 text-white hover:bg-ink/90 transition-colors"
+          >
+            {muted ? <VolumeMuteIcon className="w-4 h-4" /> : <VolumeIcon className="w-4 h-4" />}
+          </button>
+        </>
       )}
     </div>
   );
