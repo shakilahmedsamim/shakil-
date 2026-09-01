@@ -3,12 +3,7 @@
 import { useState } from "react";
 import { PlayIcon } from "./icons";
 
-/**
- * Placeholder video ID. Replace with the real YouTube video ID the client
- * supplies (a founder-led talking-to-camera video, not a stock graphic)
- * and this component switches to a real lazy-loaded embed automatically.
- */
-const VIDEO_ID = "";
+const VIDEO_ID = "TlQmifdkX24";
 
 export default function FounderVideo() {
   const [playing, setPlaying] = useState(false);
