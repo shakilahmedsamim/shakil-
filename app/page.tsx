@@ -189,7 +189,7 @@ export default function HomePage() {
             </span>
           </div>
           <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-10">
-            Google Ads, Tracking, and the Pages They Send Traffic To
+            Core Services
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">

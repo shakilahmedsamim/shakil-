@@ -17,12 +17,9 @@ const campaignItems = [
       "Organized by service line and location, not one broad catch-all campaign competing against itself.",
   },
   {
-    label: "Keyword & Audience Research",
-    description: "Built around what your actual customers search before they call, not guesswork.",
-  },
-  {
-    label: "Ad Creative & Copy",
-    description: "Written to match the exact offer on the landing page it sends traffic to.",
+    label: "Keywords & Ad Creative",
+    description:
+      "Built around what your customers actually search, with copy written to match the exact offer on the landing page it leads to.",
   },
   {
     label: "Local Services Ads",
@@ -30,12 +27,9 @@ const campaignItems = [
       "Set up and Google Guaranteed-verified where it fits your trade, since LSA leads often close faster than Search alone.",
   },
   {
-    label: "Performance Max",
-    description: "Managed with real feed and asset input, not left running on default settings.",
-  },
-  {
     label: "Bid & Budget Optimization",
-    description: "Adjusted against actual booked jobs, not just platform-reported conversions.",
+    description:
+      "Performance Max and Search bids adjusted against actual booked jobs, not just platform-reported conversions.",
   },
   {
     label: "Monthly Reporting",
