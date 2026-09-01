@@ -9,9 +9,7 @@ import {
   ArrowRightIcon,
   BarChartIcon,
   ClockIcon,
-  LayersIcon,
   LayoutIcon,
-  LinkIcon,
   ReplyIcon,
   ShieldCheckIcon,
   TargetIcon,
@@ -28,24 +26,6 @@ const heroStats = [
   { icon: ClockIcon, value: "30 Min", label: "Free Strategy Call" },
   { icon: ReplyIcon, value: "1 Day", label: "Response Time" },
   { icon: ShieldCheckIcon, value: "100%", label: "Tracking Verified" },
-];
-
-const valueProps = [
-  {
-    icon: LayersIcon,
-    heading: "Set Up Once, Track Forever",
-    body: "Most agencies stop at pixel installation. We build enhanced conversions, server-side tagging, and offline conversion imports so your Smart Bidding actually learns from real revenue.",
-  },
-  {
-    icon: TargetIcon,
-    heading: "Ads That Match Your Sales Cycle",
-    body: "Whether a lead converts online in minutes or over the phone in three weeks, we make sure that conversion gets attributed back to the exact ad and keyword that earned it.",
-  },
-  {
-    icon: LinkIcon,
-    heading: "Tracking That Covers Every Platform You Run",
-    body: "We manage Google Ads directly, but your conversion data usually needs to reach more than one platform. We build and maintain tracking for Meta, TikTok, and Pinterest too, even on ad accounts we don't manage.",
-  },
 ];
 
 const offerCards = [
@@ -210,30 +190,6 @@ export default function HomePage() {
                   {card.linkLabel}
                   <ArrowRightIcon className="w-4 h-4" />
                 </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="content-wrap px-6">
-          <div className="max-w-[560px] mx-auto text-center mb-12">
-            <p className="caption-copy uppercase tracking-wider text-accent mb-3">Why It Works</p>
-            <h2 className="h2-style">Built for Accuracy, Not Just Activity</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {valueProps.map((prop) => (
-              <div
-                key={prop.heading}
-                className="bg-white rounded-2xl border border-border shadow-sm p-8 flex flex-col gap-4 transition-shadow hover:shadow-md"
-              >
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
-                  <prop.icon className="w-6 h-6" />
-                </span>
-                <h3 className="h3-style">{prop.heading}</h3>
-                <p className="body-copy text-neutral">{prop.body}</p>
               </div>
             ))}
           </div>
