@@ -1,155 +1,50 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { PauseIconSolid, PlayIcon, VolumeIcon, VolumeMuteIcon } from "./icons";
+import { useEffect } from "react";
 
-const VIDEO_ID = "TlQmifdkX24";
+const EMBED_ID = "SmDRjS4JjsHLVuwd";
+const EMBED_URL = "https://fast.vidalytics.com/embeds/i4lAbS7M/SmDRjS4JjsHLVuwd/";
 
 /**
- * Autoplay-with-sound is blocked by every major browser's autoplay policy
- * regardless of embed params, so this starts muted (the only reliable
- * autoplay) and loops silently, with a custom mute/pause control bar and a
- * brief "tap for sound" nudge. YouTube embeds are also required by
- * YouTube's own terms to stay identifiable, so this hides as much of the
- * native player chrome as the embed API allows (no controls, no
- * title/channel overlay) rather than claiming to fully disguise the source.
+ * Vidalytics handles its own player UI, autoplay/sound behavior, and
+ * branding from its dashboard settings, so this only wires in the exact
+ * embed snippet Vidalytics provides plus the site's own frame around it.
+ * The script is idempotent-guarded so it only runs once even if this
+ * component re-renders.
  */
 export default function FounderVideo() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [shouldLoad, setShouldLoad] = useState(false);
-  const [muted, setMuted] = useState(true);
-  const [playing, setPlaying] = useState(true);
-  const [showNudge, setShowNudge] = useState(false);
-
   useEffect(() => {
-    const node = containerRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0]?.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
+    const scriptId = `vidalytics-init-${EMBED_ID}`;
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.type = "text/javascript";
+    script.text = `
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_${EMBED_ID}', '${EMBED_URL}');
+    `;
+    document.body.appendChild(script);
   }, []);
 
-  useEffect(() => {
-    if (!shouldLoad) return;
-    const showTimer = setTimeout(() => setShowNudge(true), 800);
-    const hideTimer = setTimeout(() => setShowNudge(false), 5000);
-    return () => {
-      clearTimeout(showTimer);
-      clearTimeout(hideTimer);
-    };
-  }, [shouldLoad]);
-
-  const postCommand = (func: string) => {
-    iframeRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ event: "command", func, args: [] }),
-      "*"
-    );
-  };
-
-  const toggleMute = () => {
-    postCommand(muted ? "unMute" : "mute");
-    setMuted(!muted);
-    setShowNudge(false);
-  };
-
-  const togglePlay = () => {
-    postCommand(playing ? "pauseVideo" : "playVideo");
-    setPlaying(!playing);
-  };
-
-  if (!VIDEO_ID) {
-    return (
-      <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-border bg-white flex flex-col items-center justify-center gap-3 text-center px-6">
-        <span className="flex items-center justify-center w-14 h-14 rounded-full bg-accent text-white">
-          <PlayIcon className="w-6 h-6 ml-0.5" />
-        </span>
-        <p className="body-copy font-medium">Founder introduction video</p>
-        <p className="caption-copy max-w-[36ch]">
-          Placeholder: swap in the real YouTube video ID in
-          components/FounderVideo.tsx once the client supplies a founder-led
-          talking-to-camera video.
-        </p>
-      </div>
-    );
-  }
-
-  const params = new URLSearchParams({
-    autoplay: "1",
-    mute: "1",
-    loop: "1",
-    playlist: VIDEO_ID,
-    controls: "0",
-    modestbranding: "1",
-    rel: "0",
-    iv_load_policy: "3",
-    disablekb: "1",
-    fs: "0",
-    playsinline: "1",
-    enablejsapi: "1",
-  });
-
   return (
-    <div
-      ref={containerRef}
-      className="rounded-2xl overflow-hidden bg-ink shadow-xl"
-    >
+    <div className="rounded-2xl overflow-hidden bg-ink shadow-xl">
       <div className="flex items-center gap-1.5 h-8 px-4 bg-ink">
         <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
       </div>
-
-      <div className="relative w-full aspect-video bg-black">
-        {shouldLoad && (
-          <>
-            <iframe
-              ref={iframeRef}
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?${params.toString()}`}
-              title="Founder introduction video"
-              allow="autoplay; encrypted-media; picture-in-picture"
-            />
-
-            {showNudge && (
-              <div className="absolute bottom-14 right-3 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-ink text-[13px] font-medium shadow-lg animate-pulse">
-                Tap for sound
-              </div>
-            )}
-
-            <div className="absolute bottom-3 right-3 z-10 flex items-center gap-2">
-              <button
-                type="button"
-                onClick={togglePlay}
-                aria-label={playing ? "Pause video" : "Play video"}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-              >
-                {playing ? (
-                  <PauseIconSolid className="w-4 h-4" />
-                ) : (
-                  <PlayIcon className="w-4 h-4 ml-0.5" />
-                )}
-              </button>
-              <button
-                type="button"
-                onClick={toggleMute}
-                aria-label={muted ? "Unmute video" : "Mute video"}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-              >
-                {muted ? <VolumeMuteIcon className="w-4 h-4" /> : <VolumeIcon className="w-4 h-4" />}
-              </button>
-            </div>
-          </>
-        )}
-      </div>
+      <div
+        id={`vidalytics_embed_${EMBED_ID}`}
+        style={{ width: "100%", position: "relative", paddingTop: "56.25%" }}
+      />
     </div>
   );
 }
