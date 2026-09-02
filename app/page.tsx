@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdAuctionDiagram from "@/components/AdAuctionDiagram";
-import CtaBand from "@/components/CtaBand";
 import DataFlowDiagram from "@/components/DataFlowDiagram";
 import Faq from "@/components/Faq";
+import FinalCtaForm from "@/components/FinalCtaForm";
 import FounderVideo from "@/components/FounderVideo";
 import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -363,7 +363,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CtaBand />
+      <FinalCtaForm />
     </>
   );
 }
