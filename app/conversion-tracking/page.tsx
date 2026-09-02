@@ -71,27 +71,65 @@ export default function ConversionTrackingPage() {
   return (
     <>
       <section className="section pt-12 pb-8">
-        <div className="content-wrap px-6 max-w-[760px]">
-          <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit inline-block mb-4">
-            Conversion Tracking Setup
-          </span>
-          <h1 className="h1-style mb-4">
-            Tracking Built for Google Ads First, Then Every Other Platform
-          </h1>
-          <p className="body-lg-copy text-neutral">
-            Google Ads conversion tracking, online and offline, is built and
-            verified first, since that is the platform your budget is
-            actually bid against. Meta Conversions API and first-party
-            server-side delivery are layered on top for the other platforms
-            your data needs to reach.
-          </p>
-          <Link
-            href="/book-a-call/"
-            className="btn-primary w-fit inline-flex items-center gap-2 mt-6"
-          >
-            Book My Free 30-Minute Audit
-            <ArrowRightIcon className="w-4 h-4" />
-          </Link>
+        <div className="content-wrap px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div className="flex flex-col gap-6">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
+              Conversion Tracking Setup
+            </span>
+            <h1 className="h1-style">
+              Tracking Built for Google Ads First, Then Every Other Platform
+            </h1>
+            <p className="body-lg-copy text-neutral">
+              Google Ads conversion tracking, online and offline, is built
+              and verified first, since that is the platform your budget is
+              actually bid against. Meta Conversions API and first-party
+              server-side delivery are layered on top for the other
+              platforms your data needs to reach.
+            </p>
+            <Link
+              href="/book-a-call/"
+              className="btn-primary w-fit inline-flex items-center gap-2"
+            >
+              Book My Free 30-Minute Audit
+              <ArrowRightIcon className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-4">
+            <div className="rounded-xl bg-accent/5 border border-accent/20 p-5 flex items-center gap-4">
+              <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#4285F4" }}>
+                  <GoogleAdsLogo className="w-6 h-6" />
+                </span>
+              </span>
+              <div>
+                <p className="font-semibold text-ink">Google Ads</p>
+                <p className="caption-copy">Online + offline, verified first</p>
+              </div>
+              <span className="caption-copy px-2.5 py-1 rounded-full bg-accent text-white ml-auto shrink-0">
+                Priority 1
+              </span>
+            </div>
+
+            <div className="flex justify-center">
+              <ArrowRightIcon className="w-4 h-4 text-neutral rotate-90" />
+            </div>
+
+            <div className="rounded-xl bg-background border border-border p-5 flex items-center gap-4">
+              <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#0467DF" }}>
+                  <MetaLogo className="w-5 h-5" />
+                </span>
+              </span>
+              <div>
+                <p className="font-semibold text-ink text-[15px]">Meta CAPI</p>
+                <p className="caption-copy">Server-side, layered on top</p>
+              </div>
+              <span className="caption-copy px-2.5 py-1 rounded-full bg-white border border-border ml-auto shrink-0">
+                Priority 2
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 

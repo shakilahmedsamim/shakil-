@@ -16,3 +16,11 @@ export const navLinks = [
   { href: "/case-study/", label: "Case Study" },
   { href: "/contact/", label: "Contact" },
 ];
+
+export const serviceLinks = [
+  { href: "/services/", label: "Services Overview" },
+  { href: "/google-ads-management/", label: "Google Ads Management" },
+  { href: "/google-ads-audit/", label: "Google Ads Audit" },
+  { href: "/conversion-tracking/", label: "Conversion Tracking" },
+  { href: "/landing-page-optimization/", label: "Landing Page Optimization" },
+];

@@ -82,24 +82,53 @@ export default function LandingPageOptimizationPage() {
   return (
     <>
       <section className="section pt-12 pb-8">
-        <div className="content-wrap px-6 max-w-[760px]">
-          <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit inline-block mb-4">
-            Landing Page Optimization
-          </span>
-          <h1 className="h1-style mb-4">
-            The Page an Ad Sends Traffic to Decides Whether It Was Worth It
-          </h1>
-          <p className="body-lg-copy text-neutral mb-6">
-            A well-tracked, well-targeted ad still fails if the page it
-            sends traffic to is slow, unfocused, or saying something
-            different from the ad itself. This page was built under the
-            same rules described below, so you are looking at the standard
-            before you take my word for it.
-          </p>
-          <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
-            Book My Free 30-Minute Audit
-            <ArrowRightIcon className="w-4 h-4" />
-          </Link>
+        <div className="content-wrap px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div className="flex flex-col gap-6">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
+              Landing Page Optimization
+            </span>
+            <h1 className="h1-style">
+              The Page an Ad Sends Traffic to Decides Whether It Was Worth It
+            </h1>
+            <p className="body-lg-copy text-neutral">
+              A well-tracked, well-targeted ad still fails if the page it
+              sends traffic to is slow, unfocused, or saying something
+              different from the ad itself. This page was built under the
+              same rules described below, so you are looking at the
+              standard before you take my word for it.
+            </p>
+            <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
+              Book My Free 30-Minute Audit
+              <ArrowRightIcon className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-4">
+            <p className="font-semibold text-ink text-[15px] pb-3 border-b border-border">
+              The Standard This Page Is Built Against
+            </p>
+            {[
+              { label: "Largest Contentful Paint", target: "Under 2.5s" },
+              { label: "Interaction to Next Paint", target: "Under 200ms" },
+              { label: "Cumulative Layout Shift", target: "Under 0.1" },
+            ].map((metric) => (
+              <div key={metric.label} className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-success/10 text-success shrink-0">
+                    <CheckIcon className="w-4 h-4" />
+                  </span>
+                  <span className="text-[14px] text-ink">{metric.label}</span>
+                </div>
+                <span className="caption-copy font-semibold text-success shrink-0">
+                  {metric.target}
+                </span>
+              </div>
+            ))}
+            <p className="caption-copy pt-3 border-t border-border">
+              Google&apos;s own Core Web Vitals thresholds, measured from real
+              visitor data, not a one-time lab score.
+            </p>
+          </div>
         </div>
       </section>
 
