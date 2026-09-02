@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdAuctionDiagram from "@/components/AdAuctionDiagram";
+import CaseStudyCard from "@/components/CaseStudyCard";
 import DataFlowDiagram from "@/components/DataFlowDiagram";
 import Faq from "@/components/Faq";
 import FinalCtaForm from "@/components/FinalCtaForm";
 import FounderVideo from "@/components/FounderVideo";
 import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
+import { caseStudies } from "@/lib/caseStudies";
 import {
   ArrowRightIcon,
   BarChartIcon,
@@ -329,6 +331,30 @@ export default function HomePage() {
         <div className="content-wrap px-6">
           <h2 className="h2-style text-center mb-10">What Clients Say</h2>
           <ReviewsSection />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="content-wrap px-6">
+          <div className="flex justify-center mb-5">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
+              Case Studies
+            </span>
+          </div>
+          <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-3">
+            See What Changed, Industry by Industry
+          </h2>
+          <p className="body-copy text-neutral text-center max-w-[56ch] mx-auto mb-12">
+            Real accounts across the niches I specialize in. Full
+            before-and-after numbers are added as each client approves
+            sharing them.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map((study) => (
+              <CaseStudyCard key={study.slug} study={study} />
+            ))}
+          </div>
         </div>
       </section>
 
