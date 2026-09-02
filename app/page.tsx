@@ -9,12 +9,17 @@ import LogoMarquee from "@/components/LogoMarquee";
 import ReviewsSection from "@/components/ReviewsSection";
 import {
   ArrowRightIcon,
+  BarChartIcon,
   ClockIcon,
+  FiverrLogo,
   GoogleAdsLogo,
   GoogleTagManagerLogo,
   PageSpeedInsightsLogo,
   ReplyIcon,
   ShieldCheckIcon,
+  ShieldIcon,
+  UpworkLogo,
+  WhatsAppIcon,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -57,6 +62,48 @@ const offerCards = [
       "The page an ad sends traffic to gets checked for message match, load speed, and a single clear next step, not left as an afterthought.",
     linkLabel: "See what we check",
     href: "/services/#landing-pages",
+  },
+];
+
+const differentiators = [
+  {
+    logos: [{ Logo: GoogleAdsLogo, color: "#4285F4" }],
+    title: "One Platform, Full Attention",
+    description:
+      "I manage Google Ads exclusively, so there is no split attention across a platform I am not actually running.",
+  },
+  {
+    logos: [{ Logo: GoogleTagManagerLogo, color: "#246FDB" }],
+    title: "Tracking Verified Before You Scale",
+    description:
+      "GA4, GTM, and Enhanced Conversions are checked and confirmed firing correctly before a dollar of spend depends on them.",
+  },
+  {
+    logos: [{ Logo: WhatsAppIcon, color: "#25D366" }],
+    title: "Message Me Directly, No Ticket Queue",
+    description:
+      "You reach the person actually making changes to your account over WhatsApp or email, not a support rotation.",
+  },
+  {
+    logos: [{ Logo: BarChartIcon, color: "#0066FF" }],
+    title: "Reporting You Can Actually Read",
+    description:
+      "One page: what was spent, what closed, and what changes next. Not a forty-metric export nobody reads.",
+  },
+  {
+    logos: [{ Logo: ShieldIcon, color: "#0066FF" }],
+    title: "Your Accounts, Your Logins",
+    description:
+      "Your Google Ads account and tag container are built under your own logins from day one, so there is never a migration headache if anything changes.",
+  },
+  {
+    logos: [
+      { Logo: UpworkLogo, color: "#6FDA44" },
+      { Logo: FiverrLogo, color: "#1DBF73" },
+    ],
+    title: "Proven Across Real Client Work",
+    description:
+      "5.0-rated tracking work across Upwork and Fiverr, covering GTM, GA4, Meta CAPI, TikTok, and Pinterest setups.",
   },
 ];
 
@@ -235,6 +282,46 @@ export default function HomePage() {
             </p>
           </div>
           <AdAuctionDiagram />
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="content-wrap px-6">
+          <div className="flex justify-center mb-5">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
+              How This Is Different
+            </span>
+          </div>
+          <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-3">
+            What You Get That Most Agencies Skip
+          </h2>
+          <p className="body-copy text-neutral text-center max-w-[56ch] mx-auto mb-12">
+            The parts of a Google Ads account that quietly decide whether it
+            wastes money or earns it back.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {differentiators.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-border bg-background p-6 flex flex-col gap-3"
+              >
+                <div className="flex items-center gap-1.5">
+                  {item.logos.map(({ Logo, color }, i) => (
+                    <span
+                      key={i}
+                      className="flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-border"
+                      style={{ color }}
+                    >
+                      <Logo className="w-5 h-5" />
+                    </span>
+                  ))}
+                </div>
+                <h3 className="h3-style !text-[19px]">{item.title}</h3>
+                <p className="body-copy text-neutral">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
