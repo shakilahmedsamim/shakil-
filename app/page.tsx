@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdAuctionDiagram from "@/components/AdAuctionDiagram";
 import CtaBand from "@/components/CtaBand";
 import DataFlowDiagram from "@/components/DataFlowDiagram";
 import Faq from "@/components/Faq";
@@ -217,6 +218,23 @@ export default function HomePage() {
             </p>
           </div>
           <DataFlowDiagram />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-12">
+            <p className="caption-copy uppercase tracking-wider text-accent mb-3">
+              The Auction, Explained
+            </p>
+            <h2 className="h2-style mb-3">Why Outranking a Bigger Budget Is Possible</h2>
+            <p className="body-copy text-neutral">
+              Google Ads position is not decided by bid alone. Ad quality and
+              landing page relevance factor directly into Ad Rank, so a
+              smaller, better-targeted bid can outrank a much larger one.
+            </p>
+          </div>
+          <AdAuctionDiagram />
         </div>
       </section>
 
