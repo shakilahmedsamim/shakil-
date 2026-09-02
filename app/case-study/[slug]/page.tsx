@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/lib/caseStudies";
-import { ImageIcon } from "@/components/icons";
+import BeforeAfterStrip from "@/components/BeforeAfterStrip";
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
@@ -60,20 +60,7 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
             </div>
           )}
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-xl border border-dashed border-border bg-background flex flex-col items-center justify-center gap-2 aspect-[16/10]">
-              <ImageIcon className="w-6 h-6 text-neutral" />
-              <span className="caption-copy px-4 text-center">
-                {study.slug}-before.png (1200x750)
-              </span>
-            </div>
-            <div className="rounded-xl border border-dashed border-border bg-background flex flex-col items-center justify-center gap-2 aspect-[16/10]">
-              <ImageIcon className="w-6 h-6 text-neutral" />
-              <span className="caption-copy px-4 text-center">
-                {study.slug}-after.png (1200x750)
-              </span>
-            </div>
-          </div>
+          <BeforeAfterStrip />
         </div>
       </section>
 

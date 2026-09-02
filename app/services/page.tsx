@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
-import { BarChartIcon, LayoutIcon, TargetIcon } from "@/components/icons";
+import {
+  GoogleAdsLogo,
+  GoogleTagManagerLogo,
+  LayoutIcon,
+  ShopifyLogo,
+  WordPressLogo,
+} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -233,8 +239,10 @@ export default function ServicesPage() {
         <div className="content-wrap px-6 grid md:grid-cols-3 gap-6 items-start">
           <div id="google-ads-management" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
-                <TargetIcon className="w-5 h-5" />
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#4285F4" }}>
+                  <GoogleAdsLogo className="w-5 h-5" />
+                </span>
               </span>
               <h2 className="h3-style">Google Ads Management</h2>
             </div>
@@ -259,8 +267,10 @@ export default function ServicesPage() {
 
           <div id="conversion-tracking" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
-                <BarChartIcon className="w-5 h-5" />
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#246FDB" }}>
+                  <GoogleTagManagerLogo className="w-5 h-5" />
+                </span>
               </span>
               <h2 className="h3-style">Conversion Tracking</h2>
             </div>
@@ -339,12 +349,30 @@ export default function ServicesPage() {
             <div>
               <h3 className="h3-style mb-3">Where we track online</h3>
               <div className="flex flex-col gap-5">
-                {onSitePlatforms.map((platform) => (
-                  <div key={platform.name}>
-                    <p className="font-semibold text-ink">{platform.name}</p>
-                    <p className="body-copy text-neutral">{platform.description}</p>
-                  </div>
-                ))}
+                {onSitePlatforms.map((platform) => {
+                  const Logo = platform.name.startsWith("Shopify")
+                    ? ShopifyLogo
+                    : platform.name.startsWith("WordPress")
+                      ? WordPressLogo
+                      : null;
+                  const logoColor = platform.name.startsWith("Shopify") ? "#7AB55C" : "#21759B";
+                  return (
+                    <div key={platform.name} className="flex gap-3">
+                      {Logo && (
+                        <span
+                          className="flex items-center justify-center w-8 h-8 rounded-lg bg-white border border-border shrink-0 mt-0.5"
+                          style={{ color: logoColor }}
+                        >
+                          <Logo className="w-4 h-4" />
+                        </span>
+                      )}
+                      <div>
+                        <p className="font-semibold text-ink">{platform.name}</p>
+                        <p className="body-copy text-neutral">{platform.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

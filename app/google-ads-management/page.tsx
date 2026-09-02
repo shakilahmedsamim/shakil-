@@ -4,9 +4,11 @@ import Faq from "@/components/Faq";
 import {
   ArrowRightIcon,
   CheckIcon,
-  ImageIcon,
+  GoogleAdsLogo,
   MapPinIcon,
+  ShopifyLogo,
   ShoppingCartIcon,
+  WooCommerceLogo,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -85,12 +87,39 @@ export default function GoogleAdsManagementPage() {
             </div>
           </div>
 
-          {/* Client to supply a real photo: a local service van, storefront, or ecommerce warehouse/product shot. Placeholder shown until then. */}
-          <div className="w-full aspect-[4/3] rounded-2xl bg-white border border-dashed border-border flex flex-col items-center justify-center gap-3">
-            <ImageIcon className="w-8 h-8 text-neutral" />
-            <span className="caption-copy px-6 text-center">
-              Photo placeholder (google-ads-management-hero.jpg)
-            </span>
+          <div className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-xl bg-background border border-border p-5 flex flex-col items-center text-center gap-2">
+                <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-border text-accent">
+                  <MapPinIcon className="w-5 h-5" />
+                </span>
+                <p className="font-semibold text-ink text-[14px]">Local Service</p>
+                <p className="caption-copy">Search + LSA + call tracking</p>
+              </div>
+              <div className="rounded-xl bg-background border border-border p-5 flex flex-col items-center text-center gap-2">
+                <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-border text-accent">
+                  <ShoppingCartIcon className="w-5 h-5" />
+                </span>
+                <p className="font-semibold text-ink text-[14px]">Ecommerce</p>
+                <p className="caption-copy">Shopping + Performance Max</p>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <ArrowRightIcon className="w-4 h-4 text-neutral rotate-90" />
+            </div>
+
+            <div className="rounded-xl bg-accent/5 border border-accent/20 p-5 flex items-center gap-4">
+              <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#4285F4" }}>
+                  <GoogleAdsLogo className="w-6 h-6" />
+                </span>
+              </span>
+              <div>
+                <p className="font-semibold text-ink">One Google Ads Account</p>
+                <p className="caption-copy">Structured, tracked, and bid the way each business model needs</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -125,6 +154,17 @@ export default function GoogleAdsManagementPage() {
                 </li>
               ))}
             </ul>
+            <div className="flex items-center gap-3 border-t border-border pt-4 mt-1">
+              <span className="caption-copy">Tracking built for</span>
+              <span className="flex items-center gap-1.5" style={{ color: "#7AB55C" }}>
+                <ShopifyLogo className="w-4 h-4" />
+                <span className="caption-copy !text-inherit font-semibold">Shopify</span>
+              </span>
+              <span className="flex items-center gap-1.5" style={{ color: "#96588A" }}>
+                <WooCommerceLogo className="w-4 h-4" />
+                <span className="caption-copy !text-inherit font-semibold">WooCommerce</span>
+              </span>
+            </div>
           </div>
         </div>
       </section>
