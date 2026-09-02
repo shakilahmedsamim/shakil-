@@ -1,10 +1,24 @@
 export type FaqItem = { question: string; answer: string };
 
-export default function Faq({ items }: { items: FaqItem[] }) {
+export default function Faq({
+  items,
+  schemaItems,
+  emitSchema = true,
+}: {
+  items: FaqItem[];
+  /** Full item set to include in the FAQPage schema, when it's broader
+   * than what this instance visually renders (e.g. a second Faq on the
+   * same page whose questions should still be covered by the one
+   * page-wide schema block). Defaults to `items`. */
+  schemaItems?: FaqItem[];
+  /** Set false when another Faq on the same page already emits FAQPage
+   * schema, since a page should only carry one FAQPage block. */
+  emitSchema?: boolean;
+}) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
+    mainEntity: (schemaItems ?? items).map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -39,10 +53,12 @@ export default function Faq({ items }: { items: FaqItem[] }) {
           <p className="body-copy text-neutral mt-3">{item.answer}</p>
         </details>
       ))}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {emitSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     </div>
   );
 }

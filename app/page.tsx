@@ -139,6 +139,59 @@ const faqItems = [
   },
 ];
 
+const objectionFaqItems = [
+  {
+    question: "I have tried Google Ads before and it did not work. Why would this time be different?",
+    answer:
+      "Most failed Google Ads accounts fail because of broken or missing conversion tracking, not because the platform itself does not work. Once tracking is verified and campaigns are rebuilt around real bookings instead of raw clicks, the same budget usually performs very differently.",
+  },
+  {
+    question: "How do I know the campaigns are actually working?",
+    answer:
+      "You get a monthly report showing cost per lead, cost per booked job, and what is changing next, pulled from verified conversion data rather than platform-reported clicks, so the real return is visible without needing to interpret a dashboard yourself.",
+  },
+  {
+    question: "How long until I start seeing leads?",
+    answer:
+      "Early signal usually shows up within the first couple of weeks, with meaningful, stable results typically landing in the two to four week range once tracking is corrected and the algorithm has real conversion data to optimize against.",
+  },
+  {
+    question: "Is there a minimum ad budget to work with you?",
+    answer:
+      "There is no fixed minimum, but the free audit includes an honest opinion on whether your specific market, trade, and budget make sense together before any campaign is built.",
+  },
+  {
+    question: "What happens if the campaign does not produce results?",
+    answer:
+      "There is no long-term contract, so you are never locked into a campaign that is not working. Monthly reporting is built specifically so problems get caught and fixed early rather than discovered months later.",
+  },
+  {
+    question: "Do you only work with local service businesses, or other industries too?",
+    answer:
+      "Local service businesses are the core focus, but the same tracking-first approach applies to B2B companies with longer sales cycles, and the services page lists the specific verticals with the most hands-on experience.",
+  },
+  {
+    question: "Which industries do you have case studies for?",
+    answer:
+      "Case studies cover HVAC, plumbing and home services, personal injury and family law, medical aesthetics and cosmetic dentistry, immigration and family law, B2B professional and managed services, and residential cleaning services, with more added as clients approve sharing their numbers.",
+  },
+  {
+    question: "Where are you based, and will time zones be a problem?",
+    answer:
+      "Calls and campaign management are scheduled to work across UK, US, and Canada time zones, and the Calendly booking widget automatically shows available times converted to your own time zone.",
+  },
+  {
+    question: "How much does Google Ads management cost?",
+    answer:
+      "Management cost depends on account size and how much of the setup, tracking, and reporting workload is involved, so a specific number is quoted after the free audit rather than a flat rate that ignores what your account actually needs.",
+  },
+  {
+    question: "Do I need to sign a long-term contract?",
+    answer:
+      "No, the engagement is month-to-month, so continuing is based on the reporting showing it is working, not a fixed-term commitment.",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -385,7 +438,24 @@ export default function HomePage() {
       <section className="section">
         <div className="content-wrap px-6 max-w-[860px]">
           <h2 className="h2-style text-center mb-10">Common Questions</h2>
-          <Faq items={faqItems} />
+          <Faq
+            items={faqItems}
+            schemaItems={[...faqItems, ...objectionFaqItems]}
+          />
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="content-wrap px-6 max-w-[860px]">
+          <div className="flex justify-center mb-5">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
+              Common Concerns
+            </span>
+          </div>
+          <h2 className="h2-style text-center mb-10">
+            The Questions I Get Asked Most
+          </h2>
+          <Faq items={objectionFaqItems} emitSchema={false} />
         </div>
       </section>
 
