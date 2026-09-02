@@ -18,7 +18,6 @@ export const navLinks = [
 ];
 
 export const serviceLinks = [
-  { href: "/services/", label: "Services Overview" },
   { href: "/google-ads-management/", label: "Google Ads Management" },
   { href: "/google-ads-audit/", label: "Google Ads Audit" },
   { href: "/conversion-tracking/", label: "Conversion Tracking" },

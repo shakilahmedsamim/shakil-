@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
+import DataFlowDiagram from "@/components/DataFlowDiagram";
 import {
   ArrowRightIcon,
   CheckIcon,
@@ -129,6 +130,24 @@ export default function ConversionTrackingPage() {
                 Priority 2
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-10">
+            <h2 className="h2-style mb-3">
+              One Server-Side Path, Every Platform Fed From It
+            </h2>
+            <p className="body-copy text-neutral">
+              Events are captured once, from your website, store, or CRM,
+              and delivered server-side from a tagging container hosted on
+              your own domain, not a generic third-party one.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-white border border-border p-6 md:p-10">
+            <DataFlowDiagram />
           </div>
         </div>
       </section>
