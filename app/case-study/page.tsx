@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CaseStudyCard from "@/components/CaseStudyCard";
+import CaseStudyArticleCard from "@/components/CaseStudyArticleCard";
 import { caseStudies } from "@/lib/caseStudies";
 
 export const metadata: Metadata = {
@@ -26,9 +26,9 @@ export default function CaseStudyPage() {
       </section>
 
       <section className="section pt-0">
-        <div className="content-wrap px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="content-wrap px-6 flex flex-col gap-10">
           {caseStudies.map((study) => (
-            <CaseStudyCard key={study.slug} study={study} />
+            <CaseStudyArticleCard key={study.slug} study={study} />
           ))}
         </div>
       </section>
