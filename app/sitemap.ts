@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { caseStudies } from "@/lib/caseStudies";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "contact/",
     "book-a-call/",
     "privacy-policy/",
+    "google-ads-management/",
+    "google-ads-audit/",
+    "conversion-tracking/",
+    "landing-page-optimization/",
+    ...caseStudies.map((study) => `case-study/${study.slug}/`),
   ];
 
   return routes.map((route) => ({

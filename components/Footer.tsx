@@ -4,8 +4,8 @@ import { site } from "@/lib/site";
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-white">
-      <div className="content-wrap px-6 py-14 grid gap-10 md:grid-cols-4">
-        <div>
+      <div className="content-wrap px-6 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="lg:col-span-1">
           <p className="text-[19px] font-semibold text-ink">{site.name}</p>
           <p className="caption-copy mt-3 max-w-[32ch]">
             Google Ads management and cross-platform conversion tracking for
@@ -22,6 +22,16 @@ export default function Footer() {
             <li><Link href="/case-study/" className="hover:text-accent">Case Study</Link></li>
             <li><Link href="/contact/" className="hover:text-accent">Contact</Link></li>
             <li><Link href="/book-a-call/" className="hover:text-accent">Book a Free Call</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="caption-copy uppercase tracking-wide mb-3">Services</p>
+          <ul className="flex flex-col gap-2 text-[15px] text-ink">
+            <li><Link href="/google-ads-management/" className="hover:text-accent">Google Ads Management</Link></li>
+            <li><Link href="/google-ads-audit/" className="hover:text-accent">Google Ads Audit</Link></li>
+            <li><Link href="/conversion-tracking/" className="hover:text-accent">Conversion Tracking</Link></li>
+            <li><Link href="/landing-page-optimization/" className="hover:text-accent">Landing Page Optimization</Link></li>
           </ul>
         </div>
 
