@@ -437,25 +437,18 @@ export default function HomePage() {
 
       <section className="section">
         <div className="content-wrap px-6 max-w-[860px]">
-          <h2 className="h2-style text-center mb-10">Common Questions</h2>
-          <Faq
-            items={faqItems}
-            schemaItems={[...faqItems, ...objectionFaqItems]}
-          />
-        </div>
-      </section>
-
-      <section className="section bg-white">
-        <div className="content-wrap px-6 max-w-[860px]">
           <div className="flex justify-center mb-5">
             <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
-              Common Concerns
+              Common Questions
             </span>
           </div>
           <h2 className="h2-style text-center mb-10">
             The Questions I Get Asked Most
           </h2>
-          <Faq items={objectionFaqItems} emitSchema={false} />
+          <Faq
+            items={[...faqItems, ...objectionFaqItems]}
+            schemaItems={[...faqItems, ...objectionFaqItems]}
+          />
         </div>
       </section>
 
