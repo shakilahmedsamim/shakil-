@@ -49,23 +49,36 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-5 bg-white rounded-2xl border border-border p-6 md:p-8">
-      <div className="form-field">
-        <label htmlFor="name">Name</label>
-        <input id="name" className="form-input" type="text" name="name" required />
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div className="form-field">
+          <label htmlFor="name">Name</label>
+          <input id="name" className="form-input" type="text" name="name" required />
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="email">Email</label>
+          <input id="email" className="form-input" type="email" name="email" required />
+        </div>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div className="form-field">
+          <label htmlFor="website">Website</label>
+          <input id="website" className="form-input" type="url" name="website" placeholder="https://" />
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="whatsapp">WhatsApp Number</label>
+          <input id="whatsapp" className="form-input" type="tel" name="whatsapp" placeholder="+1 555 000 0000" />
+        </div>
       </div>
 
       <div className="form-field">
-        <label htmlFor="email">Business email</label>
-        <input id="email" className="form-input" type="email" name="email" required />
-      </div>
-
-      <div className="form-field">
-        <label htmlFor="ad_platform">What are you currently running ads on?</label>
+        <label htmlFor="ad_platform">Are you currently running Google Ads?</label>
         <select id="ad_platform" name="ad_platform" className="form-input">
-          <option>Google Ads</option>
-          <option>Meta Ads</option>
-          <option>Both</option>
-          <option>Neither yet</option>
+          <option>Yes, already running Google Ads</option>
+          <option>No, not yet</option>
+          <option>Not sure</option>
         </select>
       </div>
 
