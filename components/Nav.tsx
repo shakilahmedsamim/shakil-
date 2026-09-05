@@ -63,7 +63,7 @@ export default function Nav() {
                 </button>
 
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 mt-3 w-64 rounded-2xl bg-white border border-border shadow-lg p-2">
+                  <div className="absolute top-full left-0 mt-3 w-72 rounded-2xl bg-white border border-border shadow-lg p-2">
                     {serviceLinks.map((service) => (
                       <Link
                         key={service.href}
