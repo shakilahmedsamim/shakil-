@@ -45,11 +45,11 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-accent shadow-md">
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-b from-accent to-[#0052D6] shadow-md">
       <div className="content-wrap flex items-center justify-between px-6 h-16">
         <Link
           href="/"
-          className={`flex items-start justify-center bg-white shadow-md pt-3 pb-6 px-6 transition-transform duration-300 ease-out ${
+          className={`relative flex items-start justify-center bg-white pt-3 pb-6 px-6 transition-transform duration-300 ease-out drop-shadow-[0_6px_10px_rgba(0,0,0,0.18)] ${
             scrolled ? "translate-y-0" : "translate-y-3"
           }`}
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%)" }}
