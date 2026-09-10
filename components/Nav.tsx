@@ -19,7 +19,8 @@ export default function Nav() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 40);
+        const y = window.scrollY;
+        setScrolled((prev) => (prev ? y > 24 : y > 56));
         ticking = false;
       });
     };
