@@ -16,17 +16,22 @@ export default function Nav() {
   const lastScrollY = useRef(0);
 
   useEffect(() => {
+    let ticking = false;
     const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 80);
-      if (y < 80) {
-        setTopBarVisible(true);
-      } else if (y > lastScrollY.current) {
-        setTopBarVisible(false);
-      } else {
-        setTopBarVisible(true);
-      }
-      lastScrollY.current = y;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled(y > 80);
+        setTopBarVisible((prev) => {
+          if (y < 80) return true;
+          const delta = y - lastScrollY.current;
+          if (Math.abs(delta) < 24) return prev;
+          return delta < 0;
+        });
+        lastScrollY.current = y;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
