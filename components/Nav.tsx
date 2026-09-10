@@ -4,16 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { navLinks, serviceLinks, site } from "@/lib/site";
 import WhatsAppLink from "./WhatsAppLink";
-import { ChevronDownIcon, CloseIcon, MailIcon, MenuIcon, StarIcon, WhatsAppIcon } from "./icons";
+import { ChevronDownIcon, CloseIcon, MailIcon, MenuIcon, WhatsAppIcon } from "./icons";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [topBarVisible, setTopBarVisible] = useState(true);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
-  const lastScrollY = useRef(0);
 
   useEffect(() => {
     let ticking = false;
@@ -21,15 +19,7 @@ export default function Nav() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const y = window.scrollY;
-        setScrolled(y > 80);
-        setTopBarVisible((prev) => {
-          if (y < 80) return true;
-          const delta = y - lastScrollY.current;
-          if (Math.abs(delta) < 24) return prev;
-          return delta < 0;
-        });
-        lastScrollY.current = y;
+        setScrolled(window.scrollY > 40);
         ticking = false;
       });
     };
@@ -55,103 +45,80 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div
-        className={`hidden md:block bg-ink overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
-          topBarVisible ? "max-h-10 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="content-wrap flex items-center justify-between px-6 py-2">
-          <div className="flex items-center gap-5">
-            <a
-              href={`mailto:${site.email}`}
-              className="flex items-center gap-1.5 text-[13px] text-[#B0B0B5] hover:text-white transition-colors"
-            >
-              <MailIcon className="w-3.5 h-3.5" />
-              {site.email}
-            </a>
-            <WhatsAppLink className="flex items-center gap-1.5 text-[13px] text-[#B0B0B5] hover:text-white transition-colors">
-              <WhatsAppIcon className="w-3.5 h-3.5" />
-              +{site.whatsappNumber}
-            </WhatsAppLink>
-          </div>
+    <header className="sticky top-0 z-50 w-full bg-accent shadow-md">
+      <div className="content-wrap flex items-center justify-between px-6 h-16">
+        <Link
+          href="/"
+          className={`flex items-center rounded-xl bg-white shadow-md px-4 py-2 transition-transform duration-300 ease-out ${
+            scrolled ? "translate-y-0" : "translate-y-2.5"
+          }`}
+        >
+          <span className="text-[18px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
+        </Link>
 
-          <div className="flex items-center gap-5">
-            <span className="text-[13px] text-[#B0B0B5]">
-              Serving clients across the {site.regions}
-            </span>
-            <span className="flex items-center gap-1.5 text-[13px] text-white font-medium">
-              <StarIcon className="w-3.5 h-3.5 text-accent" />
-              Google Partner
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className={`w-full border-b border-border bg-background/95 backdrop-blur transition-all duration-200 ${
-          scrolled ? "py-2 shadow-sm" : "py-4"
-        }`}
-      >
-        <div className="content-wrap flex items-center justify-between px-6">
-          <Link href="/" className="text-[19px] font-semibold text-ink">
-            {site.name}
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) =>
-              link.label === "Services" ? (
-                <div key={link.href} ref={servicesRef} className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setServicesOpen((v) => !v)}
-                    className="flex items-center gap-1 text-[16px] font-medium text-ink hover:text-accent transition-colors"
-                    aria-expanded={servicesOpen}
-                  >
-                    Services
-                    <ChevronDownIcon
-                      className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
-
-                  {servicesOpen && (
-                    <div className="absolute top-full left-0 mt-3 w-72 rounded-2xl bg-white border border-border shadow-lg p-2">
-                      {serviceLinks.map((service) => (
-                        <Link
-                          key={service.href}
-                          href={service.href}
-                          onClick={() => setServicesOpen(false)}
-                          className="block px-3 py-2.5 rounded-lg text-[15px] text-ink hover:bg-accent/10 hover:text-accent transition-colors"
-                        >
-                          {service.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-[16px] font-medium text-ink hover:text-accent transition-colors"
+        <nav className="hidden md:flex items-center gap-7">
+          {navLinks.map((link) =>
+            link.label === "Services" ? (
+              <div key={link.href} ref={servicesRef} className="relative">
+                <button
+                  type="button"
+                  onClick={() => setServicesOpen((v) => !v)}
+                  className="flex items-center gap-1 text-[15px] font-medium text-white/90 hover:text-white transition-colors"
+                  aria-expanded={servicesOpen}
                 >
-                  {link.label}
-                </Link>
-              )
-            )}
-            <Link href="/book-a-call/" className="btn-primary !py-2.5 !px-5 text-[15px]">
-              Book a Free Call
-            </Link>
-          </nav>
+                  Services
+                  <ChevronDownIcon
+                    className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
 
-          <button
-            className="md:hidden flex items-center justify-center w-11 h-11 text-ink"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
+                {servicesOpen && (
+                  <div className="absolute top-full right-0 mt-4 w-72 rounded-2xl bg-white border border-border shadow-lg p-2">
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        onClick={() => setServicesOpen(false)}
+                        className="block px-3 py-2.5 rounded-lg text-[15px] text-ink hover:bg-accent/10 hover:text-accent transition-colors"
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[15px] font-medium text-white/90 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+
+          <span className="w-px h-5 bg-white/25" aria-hidden="true" />
+
+          <WhatsAppLink className="flex items-center justify-center w-9 h-9 rounded-full bg-white/15 text-white hover:bg-white/25 transition-colors">
+            <WhatsAppIcon className="w-4 h-4" />
+          </WhatsAppLink>
+
+          <Link
+            href="/book-a-call/"
+            className="rounded-full bg-white text-accent font-semibold text-[15px] px-5 py-2.5 hover:bg-white/90 transition-colors"
           >
-            <MenuIcon className="w-6 h-6" />
-          </button>
-        </div>
+            Book a Free Call
+          </Link>
+        </nav>
+
+        <button
+          className="md:hidden flex items-center justify-center w-11 h-11 text-white"
+          aria-label="Open menu"
+          onClick={() => setOpen(true)}
+        >
+          <MenuIcon className="w-6 h-6" />
+        </button>
       </div>
 
       {open && (
