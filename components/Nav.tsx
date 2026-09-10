@@ -45,15 +45,14 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-accent shadow-md">
+    <header
+      className={`sticky top-0 z-50 w-full bg-background/95 backdrop-blur border-b border-border transition-shadow duration-200 ${
+        scrolled ? "shadow-sm" : ""
+      }`}
+    >
       <div className="content-wrap flex items-center justify-between px-6 h-16">
-        <Link
-          href="/"
-          className={`flex items-center rounded-xl bg-white shadow-md px-4 py-2 transition-transform duration-300 ease-out ${
-            scrolled ? "translate-y-0" : "translate-y-2.5"
-          }`}
-        >
-          <span className="text-[18px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
+        <Link href="/" className="flex items-center">
+          <span className="text-[19px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
@@ -63,7 +62,7 @@ export default function Nav() {
                 <button
                   type="button"
                   onClick={() => setServicesOpen((v) => !v)}
-                  className="flex items-center gap-1 text-[15px] font-medium text-white/90 hover:text-white transition-colors"
+                  className="flex items-center gap-1 text-[15px] font-medium text-ink hover:text-accent transition-colors"
                   aria-expanded={servicesOpen}
                 >
                   Services
@@ -91,29 +90,26 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[15px] font-medium text-white/90 hover:text-white transition-colors"
+                className="text-[15px] font-medium text-ink hover:text-accent transition-colors"
               >
                 {link.label}
               </Link>
             )
           )}
 
-          <span className="w-px h-5 bg-white/25" aria-hidden="true" />
+          <span className="w-px h-5 bg-border" aria-hidden="true" />
 
-          <WhatsAppLink className="flex items-center justify-center w-9 h-9 rounded-full bg-white/15 text-white hover:bg-white/25 transition-colors">
+          <WhatsAppLink className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors">
             <WhatsAppIcon className="w-4 h-4" />
           </WhatsAppLink>
 
-          <Link
-            href="/book-a-call/"
-            className="rounded-full bg-white text-accent font-semibold text-[15px] px-5 py-2.5 hover:bg-white/90 transition-colors"
-          >
+          <Link href="/book-a-call/" className="btn-primary !py-2.5 !px-5 text-[15px]">
             Book a Free Call
           </Link>
         </nav>
 
         <button
-          className="md:hidden flex items-center justify-center w-11 h-11 text-white"
+          className="md:hidden flex items-center justify-center w-11 h-11 text-ink"
           aria-label="Open menu"
           onClick={() => setOpen(true)}
         >
