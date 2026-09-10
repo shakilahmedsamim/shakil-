@@ -49,11 +49,12 @@ export default function Nav() {
       <div className="content-wrap flex items-center justify-between px-6 h-16">
         <Link
           href="/"
-          className={`flex items-center rounded-xl bg-white shadow-md px-4 py-2 transition-transform duration-300 ease-out ${
-            scrolled ? "translate-y-0" : "translate-y-2.5"
+          className={`flex items-start justify-center bg-white shadow-md pt-3 pb-6 px-6 transition-transform duration-300 ease-out ${
+            scrolled ? "translate-y-0" : "translate-y-3"
           }`}
+          style={{ clipPath: "polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%)" }}
         >
-          <span className="text-[18px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
+          <span className="text-[17px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
