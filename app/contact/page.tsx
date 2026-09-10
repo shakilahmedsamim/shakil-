@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import Faq from "@/components/Faq";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import { ArrowRightIcon, ClockIcon, GlobeIcon, MailIcon, WhatsAppIcon } from "@/components/icons";
 import { site } from "@/lib/site";
@@ -11,6 +12,29 @@ export const metadata: Metadata = {
     "Send your details for a free Google Ads and conversion tracking audit, or message us directly on WhatsApp or email.",
   alternates: { canonical: "/contact/" },
 };
+
+const faqItems = [
+  {
+    question: "What happens after I submit the contact form?",
+    answer:
+      "The details submitted are reviewed and a reply comes back within one business day, usually faster, either by email or WhatsApp depending on what was provided, with next steps for the free audit.",
+  },
+  {
+    question: "Is WhatsApp or email faster for a response?",
+    answer:
+      "Both are checked on the same schedule, so either channel gets a reply within one business day. WhatsApp is a good fit for a quick question, while email works better for anything that needs detail, like account access instructions.",
+  },
+  {
+    question: "Do I need to book a call, or can I just send my details?",
+    answer:
+      "Either works. Sending details through the form lets the account get reviewed asynchronously before a reply, while booking a call directly skips straight to a live 30-minute audit on the calendar.",
+  },
+  {
+    question: "What information should I include to get the most useful reply?",
+    answer:
+      "Your website, whether you are currently running Google Ads, and a short description of your business and goals lets the reply address your specific account instead of a generic response.",
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -97,6 +121,11 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="content-wrap px-6 max-w-[860px] mt-20">
+        <h2 className="h2-style text-center mb-10">Common Questions</h2>
+        <Faq items={faqItems} />
       </div>
     </section>
   );

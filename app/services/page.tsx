@@ -217,6 +217,31 @@ const faqItems = [
     answer:
       "Yes: capturing the GCLID or fbclid at first contact and storing it on the CRM lead record lets an automation tool push the closed-deal event back to Google's Enhanced Conversions for Leads and Meta's Conversions API once the deal is marked won, closing the loop between an offline sale and the ad click that started it.",
   },
+  {
+    question: "What is included in the free 30-minute audit?",
+    answer:
+      "The audit reviews current campaign structure, whether conversion tracking is accurate or double-counting, whether Enhanced Conversions and offline imports are actually verified, and gives a written summary of the top issues found, all before any commitment to work together.",
+  },
+  {
+    question: "Do I need to give account access before the free audit?",
+    answer:
+      "Read-only access to the Google Ads account and, where relevant, GA4 and the site's tag manager container, is the minimum needed to review tracking and campaign structure properly. Nothing is changed in the account during the audit itself.",
+  },
+  {
+    question: "Is there a contract or can I cancel anytime?",
+    answer:
+      "The engagement is month-to-month with no long-term contract, so continuing is based on the monthly report showing it is working, not a fixed-term commitment.",
+  },
+  {
+    question: "How is Google Ads management different from just installing a pixel and running ads?",
+    answer:
+      "Installing a pixel and turning campaigns on gets an account live, but it does not verify that Enhanced Conversions is matching correctly, that GA4 and Google Ads are not double-counting the same event, or that offline sales ever make it back to the platform, and all three commonly cause Smart Bidding to optimize against incomplete or wrong data.",
+  },
+  {
+    question: "Do you work with businesses outside the UK, US, and Canada?",
+    answer:
+      "Campaign management and reporting are scheduled around UK, US, and Canada time zones, so those are the markets served directly, though conversion tracking implementation itself is not tied to a specific region.",
+  },
 ];
 
 export default function ServicesPage() {

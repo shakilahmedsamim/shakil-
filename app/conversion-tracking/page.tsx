@@ -66,6 +66,26 @@ const faqItems = [
     answer:
       "Yes. Capturing the GCLID at first contact and storing it on the CRM lead record lets an automation push the closed-deal event back to Google's Enhanced Conversions for Leads once the deal is marked won, closing the loop between an offline sale and the ad click that started it.",
   },
+  {
+    question: "What is the difference between GA4 event tracking and Google Ads conversion tracking?",
+    answer:
+      "GA4 measures and reports on events across the whole site regardless of traffic source, while Google Ads conversion tracking specifically ties an event back to the ad click, keyword, and campaign that produced it so Smart Bidding can optimize against it. Both are usually set up together, but GA4 alone does not feed the Google Ads bidding algorithm.",
+  },
+  {
+    question: "Do Enhanced Conversions require sending personal data to Google in plain text?",
+    answer:
+      "No. Enhanced Conversions works by hashing customer data such as email and phone number with the SHA-256 algorithm in the browser or server before it is sent, so Google receives a one-way hash used only for matching, not the original readable value.",
+  },
+  {
+    question: "How do I verify conversion tracking is actually working, not just installed?",
+    answer:
+      "Google Tag Assistant and the Google Ads diagnostics tab confirm a tag is firing and receiving Enhanced Conversions matches, while Meta Events Manager's test events tool and Event Match Quality score confirm the same for Meta. A tag that fires without a verified match rate is not proof tracking is accurate.",
+  },
+  {
+    question: "Is server-side tagging required for every account, or only larger ones?",
+    answer:
+      "Server-side tagging pays for itself once an account is spending enough that browser tracking prevention and ad blockers are hiding a meaningful share of conversions. Smaller accounts are usually better served by getting standard Google tag, GA4, and Enhanced Conversions fully correct first.",
+  },
 ];
 
 export default function ConversionTrackingPage() {

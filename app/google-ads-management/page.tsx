@@ -55,6 +55,26 @@ const faqItems = [
     answer:
       "Pricing depends on account size, catalog size for ecommerce accounts, and how much tracking work is needed, and a specific number is quoted after the free audit rather than a flat rate that ignores what your account actually needs.",
   },
+  {
+    question: "How long does Local Services Ads verification take?",
+    answer:
+      "Google Guaranteed verification typically takes anywhere from a few days to a few weeks depending on the trade and how quickly background checks, license verification, and insurance documents come back, so it is started early in the account build rather than left until Search campaigns are already running.",
+  },
+  {
+    question: "What is the difference between Shopping campaigns and Performance Max for ecommerce?",
+    answer:
+      "Standard Shopping campaigns give more direct control over bids and placements at the product level, while Performance Max lets Google's automation bid across Search, Display, YouTube, and Shopping inventory from one campaign. Most ecommerce accounts here run Performance Max for broad reach with a protected brand Search campaign alongside it, since Performance Max can otherwise cannibalize branded traffic that would have converted for free.",
+  },
+  {
+    question: "Can you take over management of an account that is already running with another agency?",
+    answer:
+      "Yes. A takeover starts with the same free audit used for any new account, reviewing existing campaign structure, conversion tracking accuracy, and account history before making changes, so nothing that is already working gets disrupted in the handover.",
+  },
+  {
+    question: "How often do you send reports and adjust bids?",
+    answer:
+      "Bids, budgets, and negative keyword lists are reviewed on an ongoing basis as spend accumulates, not on a fixed monthly schedule alone, while a written report summarizing what was spent, what closed, and what changes next goes out monthly in plain language.",
+  },
 ];
 
 export default function GoogleAdsManagementPage() {

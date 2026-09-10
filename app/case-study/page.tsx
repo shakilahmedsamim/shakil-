@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudyArticleCard from "@/components/CaseStudyArticleCard";
+import Faq from "@/components/Faq";
 import { caseStudies } from "@/lib/caseStudies";
 
 export const metadata: Metadata = {
@@ -9,6 +10,24 @@ export const metadata: Metadata = {
     "Real accounts we have worked on across the industries we specialize in, with client-approved before-and-after tracking and campaign results.",
   alternates: { canonical: "/case-study/" },
 };
+
+const faqItems = [
+  {
+    question: "Are these case studies real accounts or hypothetical examples?",
+    answer:
+      "These are real accounts the agency has worked on. Company names are withheld where confidentiality applies, and specific figures are only published once each client approves sharing them, which is why some metrics still show as pending.",
+  },
+  {
+    question: "Why don't all case studies show specific numbers yet?",
+    answer:
+      "Client-approved figures are added as each business signs off on sharing their numbers publicly, since publishing a client's cost-per-lead or revenue data without explicit approval is not something this agency does.",
+  },
+  {
+    question: "Do you have case studies outside the industries listed here?",
+    answer:
+      "The industries shown are where the deepest, repeated experience is, but the same tracking-first approach applies to other local service and B2B verticals. A free audit will show how the same method applies to your specific account.",
+  },
+];
 
 export default function CaseStudyPage() {
   return (
@@ -30,6 +49,13 @@ export default function CaseStudyPage() {
           {caseStudies.map((study) => (
             <CaseStudyArticleCard key={study.slug} study={study} />
           ))}
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="content-wrap px-6 max-w-[860px]">
+          <h2 className="h2-style text-center mb-10">Common Questions</h2>
+          <Faq items={faqItems} />
         </div>
       </section>
 

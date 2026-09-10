@@ -60,6 +60,26 @@ const faqItems = [
     answer:
       "Read-only access is enough for the audit itself, so nothing in your account can be changed during the call.",
   },
+  {
+    question: "How long does a Google Ads audit take?",
+    answer:
+      "The live call runs 30 minutes, and the written summary of findings is delivered within one business day afterward, though the depth of the review depends on account size and how many campaigns are active.",
+  },
+  {
+    question: "What are the most common issues found in a Google Ads audit?",
+    answer:
+      "The most common findings are double-counted conversions between GA4 and Google Ads, Enhanced Conversions switched on but not actually matching, broad match keywords pulling in unrelated searches, and Performance Max campaigns cannibalizing brand search traffic that would have converted for free.",
+  },
+  {
+    question: "Do you audit Performance Max campaigns specifically?",
+    answer:
+      "Yes. Performance Max is checked for asset group structure, whether it is bidding on brand terms that should be excluded, and whether the conversion data it optimizes against is accurate, since Performance Max automation only performs as well as the data it is given.",
+  },
+  {
+    question: "What happens after the audit if I want to move forward?",
+    answer:
+      "There is no pressure to continue. If the findings show issues worth fixing, the next step is a specific, quoted plan for the tracking and campaign work needed, not a generic package.",
+  },
 ];
 
 export default function GoogleAdsAuditPage() {

@@ -77,6 +77,26 @@ const faqItems = [
     answer:
       "A real pass means Largest Contentful Paint under 2.5 seconds, Interaction to Next Paint under 200 milliseconds, and Cumulative Layout Shift under 0.1, measured from actual visitor data in Google Search Console or PageSpeed Insights field data, not a one-time lab test.",
   },
+  {
+    question: "What platform does the landing page need to be built on?",
+    answer:
+      "Message match and speed fixes can be applied on a custom-built site, WordPress, Shopify, or a page builder such as Webflow or Squarespace. The specific technique changes by platform, but the same standard, message match, load speed, and one clear action, applies regardless of what the page is built on.",
+  },
+  {
+    question: "How does message match actually improve conversion rate?",
+    answer:
+      "When the headline and hero image on the landing page repeat the exact offer or keyword from the ad someone clicked, the visitor immediately confirms they are in the right place, which lowers bounce rate before the visitor ever reaches the call to action further down the page.",
+  },
+  {
+    question: "Do you test landing pages on real phones or just a resized browser?",
+    answer:
+      "Tap targets, forms, and the booking widget are tested on an actual phone, since a browser window resized to a phone width does not reproduce how a real mobile keyboard, viewport, or touch target behaves.",
+  },
+  {
+    question: "Is landing page optimization a one-time fix or an ongoing service?",
+    answer:
+      "An initial pass fixes the message match, speed, and single call-to-action problems most pages have, and Core Web Vitals are then checked against real visitor field data on an ongoing basis, since a page that passed once can regress after a new script or embed gets added later.",
+  },
 ];
 
 export default function LandingPageOptimizationPage() {

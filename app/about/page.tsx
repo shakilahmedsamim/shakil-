@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Faq from "@/components/Faq";
 import { CheckIcon, ImageIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -8,6 +9,29 @@ export const metadata: Metadata = {
     "Why Tracking Guru exists: an agency built specifically around fixing broken ad tracking and wasted ad spend for local service and B2B businesses.",
   alternates: { canonical: "/about/" },
 };
+
+const faqItems = [
+  {
+    question: "Is this a one-person operation or a full agency?",
+    answer:
+      "Tracking Guru is run as a specialist practice rather than a large generalist agency, which means direct access to the person actually making changes in the account, not an account manager relaying requests to someone else.",
+  },
+  {
+    question: "Why specialize in Google Ads and tracking instead of offering full-service marketing?",
+    answer:
+      "Diagnosing a broken pixel, a missing Enhanced Conversion, or a double-counted event is the specific, repeated work done every week, not an occasional task inside a broader retainer covering SEO, social, and design at the same time.",
+  },
+  {
+    question: "Which industries does Tracking Guru specialize in?",
+    answer:
+      "Home services trades such as HVAC and plumbing, legal verticals including personal injury and immigration law, medical aesthetics and cosmetic dentistry, and B2B professional and managed services, all industries where tracking accuracy and offline conversion attribution have an outsized effect on ad performance.",
+  },
+  {
+    question: "Do you only work with businesses in the UK, US, and Canada?",
+    answer:
+      "Client management and reporting are scheduled around UK, US, and Canada time zones, since consistent overlap for calls and campaign changes matters more than serving every region at once.",
+  },
+];
 
 const whatIDo = [
   "Set up and manage Google Ads accounts so tracking is correct before the first dollar is spent",
@@ -85,6 +109,13 @@ export default function AboutPage() {
               Book Your Free 30-Minute Audit
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="content-wrap px-6 max-w-[860px]">
+          <h2 className="h2-style text-center mb-10">Common Questions</h2>
+          <Faq items={faqItems} />
         </div>
       </section>
     </>
