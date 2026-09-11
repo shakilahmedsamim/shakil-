@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { WhatsAppIcon } from "./icons";
 
 export default function Footer() {
   return (
@@ -42,8 +43,14 @@ export default function Footer() {
               <a href={`mailto:${site.email}`} className="hover:text-accent">{site.email}</a>
             </li>
             <li>
-              <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                WhatsApp: +{site.whatsappNumber}
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-accent"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                Message on WhatsApp
               </a>
             </li>
           </ul>

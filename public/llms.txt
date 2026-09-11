@@ -1,4 +1,4 @@
-# Tracking Guru
+# PPC Shakil
 
 > Google Ads management with full conversion tracking across every ad
 > platform a business runs, for local service businesses and B2B companies
@@ -6,7 +6,7 @@
 
 ## What we do
 
-Tracking Guru sets up and manages Google Ads campaigns, and builds the
+PPC Shakil sets up and manages Google Ads campaigns, and builds the
 conversion tracking behind them and behind any other platform a client
 advertises on: Google tag and GA4 event tracking, Enhanced Conversions for
 Leads, Meta Pixel and Conversions API with event deduplication, TikTok and

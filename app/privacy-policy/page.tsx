@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Tracking Guru handles the information you submit through this site.",
+  description: "How PPC Shakil handles the information you submit through this site.",
   alternates: { canonical: "/privacy-policy/" },
 };
 

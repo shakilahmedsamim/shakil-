@@ -6,7 +6,7 @@ import { CheckIcon, ImageIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why Tracking Guru exists: an agency built specifically around fixing broken ad tracking and wasted ad spend for local service and B2B businesses.",
+    "Why PPC Shakil exists: an agency built specifically around fixing broken ad tracking and wasted ad spend for local service and B2B businesses.",
   alternates: { canonical: "/about/" },
 };
 
@@ -14,7 +14,7 @@ const faqItems = [
   {
     question: "Is this a one-person operation or a full agency?",
     answer:
-      "Tracking Guru is run as a specialist practice rather than a large generalist agency, which means direct access to the person actually making changes in the account, not an account manager relaying requests to someone else.",
+      "PPC Shakil is run as a specialist practice rather than a large generalist agency, which means direct access to the person actually making changes in the account, not an account manager relaying requests to someone else.",
   },
   {
     question: "Why specialize in Google Ads and tracking instead of offering full-service marketing?",
@@ -22,7 +22,7 @@ const faqItems = [
       "Diagnosing a broken pixel, a missing Enhanced Conversion, or a double-counted event is the specific, repeated work done every week, not an occasional task inside a broader retainer covering SEO, social, and design at the same time.",
   },
   {
-    question: "Which industries does Tracking Guru specialize in?",
+    question: "Which industries does PPC Shakil specialize in?",
     answer:
       "Home services trades such as HVAC and plumbing, legal verticals including personal injury and immigration law, medical aesthetics and cosmetic dentistry, and B2B professional and managed services, all industries where tracking accuracy and offline conversion attribution have an outsized effect on ad performance.",
   },
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3">
               <h1 className="h1-style">Who I Am</h1>
               <p className="body-lg-copy text-neutral">
-                I run Tracking Guru, a Google Ads management and conversion
+                I run PPC Shakil, a Google Ads management and conversion
                 tracking agency working with local service businesses and
                 B2B companies across the UK, US, and Canada. [Client to
                 replace with a first-person paragraph naming real experience,

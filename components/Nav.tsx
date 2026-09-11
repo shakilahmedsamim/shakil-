@@ -194,7 +194,7 @@ export default function Nav() {
             </a>
             <WhatsAppLink className="flex items-center gap-2 text-[15px] text-neutral">
               <WhatsAppIcon className="w-4 h-4" />
-              +{site.whatsappNumber}
+              Message on WhatsApp
             </WhatsAppLink>
           </div>
         </div>

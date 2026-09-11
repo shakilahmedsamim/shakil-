@@ -70,7 +70,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-ink text-[15px]">WhatsApp</p>
                   <WhatsAppLink className="body-copy text-accent underline">
-                    +{site.whatsappNumber}
+                    Message on WhatsApp
                   </WhatsAppLink>
                 </div>
               </div>
