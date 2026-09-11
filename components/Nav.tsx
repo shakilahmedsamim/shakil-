@@ -55,7 +55,9 @@ export default function Nav() {
           }`}
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%)" }}
         >
-          <span className="text-[17px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
+          <span className="text-[17px] font-bold tracking-tight text-ink whitespace-nowrap">
+            <span className="text-accent">PPC</span> Shakil
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">

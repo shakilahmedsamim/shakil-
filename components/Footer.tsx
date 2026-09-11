@@ -7,7 +7,14 @@ export default function Footer() {
     <footer className="border-t border-border bg-white">
       <div className="content-wrap px-6 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
-          <p className="text-[19px] font-semibold text-ink">{site.name}</p>
+          <div className="flex items-center gap-2">
+            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent text-white font-bold text-[15px] shrink-0">
+              P
+            </span>
+            <p className="text-[20px] font-bold tracking-tight text-ink">
+              <span className="text-accent">PPC</span> Shakil
+            </p>
+          </div>
           <p className="caption-copy mt-3 max-w-[32ch]">
             Google Ads management and cross-platform conversion tracking for
             local service businesses and B2B companies across the{" "}
