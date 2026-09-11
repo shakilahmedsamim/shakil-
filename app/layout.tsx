@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   },
   description:
     "Google Ads management with cross-platform conversion tracking (Google, Meta, TikTok, Pinterest) for local service businesses and B2B companies in the UK, US, and Canada.",
+  authors: [{ name: "Shakil", url: `${site.url}/about/` }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -46,7 +47,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     areaServed: ["United Kingdom", "United States", "Canada"],
     description:
       "Google Ads management with cross-platform conversion tracking for local service businesses and B2B companies.",
-    sameAs: [],
+    founder: {
+      "@type": "Person",
+      name: "Shakil",
+      alternateName: "PPC Shakil",
+      url: `${site.url}/about/`,
+    },
   };
 
   return (

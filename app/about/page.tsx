@@ -3,12 +3,37 @@ import Link from "next/link";
 import Faq from "@/components/Faq";
 import { CheckIcon, ImageIcon } from "@/components/icons";
 import UploadedImage from "@/components/UploadedImage";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Shakil",
   description:
-    "Why PPC Shakil exists: an agency built specifically around fixing broken ad tracking and wasted ad spend for local service and B2B businesses.",
+    "Shakil runs PPC Shakil, a Google Ads management and conversion tracking practice built specifically around fixing broken ad tracking and wasted ad spend for local service and B2B businesses.",
   alternates: { canonical: "/about/" },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Shakil",
+  alternateName: "PPC Shakil",
+  jobTitle: "Google Ads and Conversion Tracking Specialist",
+  url: `${site.url}/about/`,
+  email: `mailto:${site.email}`,
+  worksFor: {
+    "@type": "ProfessionalService",
+    name: site.name,
+    url: site.url,
+  },
+  knowsAbout: [
+    "Google Ads",
+    "Google Ads Management",
+    "Conversion Tracking",
+    "Enhanced Conversions",
+    "Server-Side Tagging",
+    "Landing Page Optimization",
+    "PPC Advertising",
+  ],
 };
 
 const faqItems = [
@@ -44,6 +69,11 @@ const whatIDo = [
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+
       <section className="section pt-12">
         <div className="content-wrap px-6 grid md:grid-cols-[280px_1fr] gap-10 items-start">
           {/* Upload a real founder photo to public/images/uploads/about-founder.jpg (via GitHub) and it will replace this placeholder automatically. Recommended size: 800x800px. */}
@@ -65,13 +95,13 @@ export default function AboutPage() {
 
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
-              <h1 className="h1-style">Who I Am</h1>
+              <h1 className="h1-style">About Shakil</h1>
               <p className="body-lg-copy text-neutral">
-                I run PPC Shakil, a Google Ads management and conversion
-                tracking agency working with local service businesses and
-                B2B companies across the UK, US, and Canada. [Client to
-                replace with a first-person paragraph naming real experience,
-                years in the field, and location context.]
+                I&apos;m Shakil, and I run PPC Shakil, a Google Ads management
+                and conversion tracking practice working with local service
+                businesses and B2B companies across the UK, US, and Canada.
+                [Client to replace with a first-person paragraph naming real
+                experience, years in the field, and location context.]
               </p>
             </div>
 
