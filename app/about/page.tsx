@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 import { CheckIcon, ImageIcon } from "@/components/icons";
+import UploadedImage from "@/components/UploadedImage";
 
 export const metadata: Metadata = {
   title: "About",
@@ -45,15 +46,22 @@ export default function AboutPage() {
     <>
       <section className="section pt-12">
         <div className="content-wrap px-6 grid md:grid-cols-[280px_1fr] gap-10 items-start">
-          {/* Client to upload a real founder photo via GitHub. Suggested filename: about-founder.jpg, recommended size 800x800px. */}
-          <div className="w-full aspect-square rounded-2xl bg-white border border-dashed border-border flex flex-col items-center justify-center gap-3 overflow-hidden">
-            <ImageIcon className="w-8 h-8 text-neutral" />
-            <span className="caption-copy px-6 text-center">
-              Founder photo placeholder
-              <br />
-              (about-founder.jpg)
-            </span>
-          </div>
+          {/* Upload a real founder photo to public/images/uploads/about-founder.jpg (via GitHub) and it will replace this placeholder automatically. Recommended size: 800x800px. */}
+          <UploadedImage
+            src="/images/uploads/about-founder.jpg"
+            alt="Founder"
+            className="w-full aspect-square rounded-2xl object-cover border border-border"
+            fallback={
+              <div className="w-full aspect-square rounded-2xl bg-white border border-dashed border-border flex flex-col items-center justify-center gap-3 overflow-hidden">
+                <ImageIcon className="w-8 h-8 text-neutral" />
+                <span className="caption-copy px-6 text-center">
+                  Founder photo placeholder
+                  <br />
+                  (about-founder.jpg)
+                </span>
+              </div>
+            }
+          />
 
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
