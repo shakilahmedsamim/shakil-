@@ -14,16 +14,42 @@ import { CheckIcon } from "./icons";
  * /answer/1722122, /answer/6167118.
  */
 const competitors = [
-  { name: "Competitor A", bid: 8.0, quality: "Poor", qualityScore: 1, isYou: false },
-  { name: "You", bid: 4.5, quality: "Great", qualityScore: 3, isYou: true },
-  { name: "Competitor B", bid: 6.0, quality: "Average", qualityScore: 2, isYou: false },
+  {
+    name: "Competitor A",
+    bid: 8.0,
+    quality: "Poor",
+    qualityScore: 1,
+    isYou: false,
+    url: "www.competitor-a.net",
+    headline: "Click Here For HVAC Services",
+    description: "Best prices guaranteed. Call today for more information.",
+  },
+  {
+    name: "You",
+    bid: 4.5,
+    quality: "Great",
+    qualityScore: 3,
+    isYou: true,
+    url: "www.yoursite.com",
+    headline: "Same-Day HVAC Repair | Call Now",
+    description: "Licensed and insured technicians. Free estimate, no obligation.",
+  },
+  {
+    name: "Competitor B",
+    bid: 6.0,
+    quality: "Average",
+    qualityScore: 2,
+    isYou: false,
+    url: "www.competitorb.com",
+    headline: "HVAC Services Available",
+    description: "We offer heating and cooling services in your area.",
+  },
 ];
 
 const ranked = competitors
   .map((c) => ({ ...c, adRank: c.bid * c.qualityScore }))
   .sort((a, b) => b.adRank - a.adRank);
 
-const maxAdRank = ranked[0].adRank;
 const winner = ranked[0];
 const runnerUp = ranked[1];
 const actualCpc = runnerUp.adRank / winner.qualityScore + 0.01;
@@ -56,26 +82,43 @@ export default function AdAuctionDiagram() {
 
   return (
     <div ref={containerRef} className="flex flex-col gap-10">
-      <div className="grid grid-cols-3 gap-4 md:gap-6 items-end">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 items-start">
         {ranked.map((c, i) => (
           <div key={c.name} className="flex flex-col items-center gap-3">
-            <div className="relative w-full flex flex-col items-center justify-end h-[180px] md:h-[220px]">
-              {c.isYou && revealed && (
-                <span className="absolute -top-8 flex items-center gap-1 px-2 py-1 rounded-full bg-success/10 text-success text-[12px] font-semibold">
+            <div className="h-7">
+              {c.isYou && (
+                <span
+                  className={`flex items-center gap-1 px-2 py-1 rounded-full bg-success/10 text-success text-[12px] font-semibold transition-opacity duration-500 ${
+                    revealed ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ transitionDelay: "900ms" }}
+                >
                   <CheckIcon className="w-3.5 h-3.5" />
                   #1 Position
                 </span>
               )}
-              <div
-                className={`w-full rounded-t-xl transition-[height] duration-[1200ms] ease-out ${
-                  c.isYou ? "bg-accent" : "bg-neutral/30"
-                }`}
-                style={{
-                  height: revealed ? `${(c.adRank / maxAdRank) * 100}%` : "0%",
-                  transitionDelay: `${i * 150}ms`,
-                }}
-              />
             </div>
+
+            <div
+              className={`w-full rounded-xl bg-white p-4 flex flex-col gap-1.5 transition-all duration-700 ease-out ${
+                c.isYou ? "border border-border shadow-sm" : "border border-border"
+              } ${revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+              style={{
+                transitionDelay: `${i * 150}ms`,
+                borderLeftWidth: c.isYou ? "4px" : "1px",
+                borderLeftColor: c.isYou ? "#0066FF" : undefined,
+              }}
+            >
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] font-bold text-success border border-success rounded px-1 leading-4">
+                  Ad
+                </span>
+                <span className="text-[12px] text-neutral truncate">{c.url}</span>
+              </div>
+              <p className="text-[15px] font-medium text-accent leading-snug">{c.headline}</p>
+              <p className="text-[13px] text-neutral leading-snug">{c.description}</p>
+            </div>
+
             <p className={`font-semibold text-[15px] ${c.isYou ? "text-accent" : "text-ink"}`}>
               {c.name}
             </p>
