@@ -54,7 +54,7 @@ const trackingItems = [
   },
   {
     label: "Cross-Platform Tracking",
-    description: "Meta Pixel and Conversions API implemented with event deduplication, even on accounts we don't manage.",
+    description: "Meta Pixel and Conversions API implemented with event deduplication, even on accounts I don't manage.",
   },
   {
     label: "Server-Side Tagging",
@@ -154,7 +154,7 @@ const onSitePlatforms = [
   {
     name: "Custom-built websites (React, Next.js, Node.js)",
     description:
-      "The same stack this site itself uses. We implement server-side tagging directly via a dedicated server GTM container, most commonly hosted on Stape.io, since it is more affordable and far less operationally heavy than self-hosting a server container on AWS or Google Cloud.",
+      "The same stack this site itself uses. I implement server-side tagging directly via a dedicated server GTM container, most commonly hosted on Stape.io, since it is more affordable and far less operationally heavy than self-hosting a server container on AWS or Google Cloud.",
   },
   {
     name: "Shopify",
@@ -176,23 +176,23 @@ const onSitePlatforms = [
 const comparisonRows = [
   {
     them: "Installs a pixel and calls tracking done",
-    us: "Verifies Enhanced Conversions and Conversions API events actually match, not just fire",
+    me: "Verifies Enhanced Conversions and Conversions API events actually match, not just fire",
   },
   {
     them: "Reports on clicks and impressions",
-    us: "Reports on cost per booked job and closed revenue",
+    me: "Reports on cost per booked job and closed revenue",
   },
   {
     them: "Ignores offline sales entirely",
-    us: "Builds a CRM-to-ad-platform pipeline so closed deals feed back into bidding",
+    me: "Builds a CRM-to-ad-platform pipeline so closed deals feed back into bidding",
   },
   {
     them: "One generic setup for every client",
-    us: "Tracking method matched to the client's actual website platform and CRM",
+    me: "Tracking method matched to the client's actual website platform and CRM",
   },
   {
     them: "Disappears after the pixel is installed",
-    us: "Audits the account on a set cadence using named, documented tools",
+    me: "Audits the account on a set cadence using named, documented tools",
   },
 ];
 
@@ -200,7 +200,7 @@ const faqItems = [
   {
     question: "Do you manage Meta Ads campaigns?",
     answer:
-      "No, we manage Google Ads exclusively. Our conversion tracking service is platform-agnostic, so if you also run Meta, TikTok, or Pinterest ads, we can still build and maintain accurate tracking on those accounts even though we don't manage the campaigns themselves.",
+      "No, I manage Google Ads exclusively. My conversion tracking service is platform-agnostic, so if you also run Meta, TikTok, or Pinterest ads, I can still build and maintain accurate tracking on those accounts even though I don't manage the campaigns themselves.",
   },
   {
     question: "What counts as a tracking audit checklist item?",
@@ -254,7 +254,7 @@ export default function ServicesPage() {
           </h1>
           <p className="body-lg-copy text-neutral max-w-prose mt-4">
             Running ads and tracking what they produce are not two separate
-            jobs. We handle both, so every dollar of spend can be traced to
+            jobs. I handle both, so every dollar of spend can be traced to
             whether it produced a real, closed sale.
           </p>
         </div>
@@ -272,7 +272,7 @@ export default function ServicesPage() {
               <h2 className="h3-style">Google Ads Management</h2>
             </div>
             <p className="body-copy text-neutral">
-              We run your Search and Local Services Ads campaigns end to end,
+              I run your Search and Local Services Ads campaigns end to end,
               from structure to daily bid decisions.
             </p>
             <ul className="flex flex-col gap-4">
@@ -284,9 +284,9 @@ export default function ServicesPage() {
               ))}
             </ul>
             <p className="caption-copy border-t border-border pt-4 mt-1">
-              We manage Google Ads directly. If you also run Meta, TikTok, or
-              Pinterest ads, our conversion tracking service covers those
-              platforms too, even though we don&apos;t manage those campaigns.
+              I manage Google Ads directly. If you also run Meta, TikTok, or
+              Pinterest ads, my conversion tracking service covers those
+              platforms too, even though I don&apos;t manage those campaigns.
             </p>
           </div>
 
@@ -353,7 +353,7 @@ export default function ServicesPage() {
                 contract, a completed phone consultation, or a paid invoice,
                 that event needs to travel from wherever it lives back into
                 Google Ads and Meta so the bidding algorithm can learn from
-                real revenue instead of just form fills. We build this
+                real revenue instead of just form fills. I build this
                 pipeline using whichever automation tool fits the client&apos;s
                 technical setup and budget.
               </p>
@@ -366,13 +366,13 @@ export default function ServicesPage() {
                 ))}
               </div>
               <p className="font-semibold text-ink mb-2">
-                CRM platforms we connect for offline conversion tracking
+                CRM platforms I connect for offline conversion tracking
               </p>
               <p className="body-copy text-neutral">{crmPlatforms.join(", ")}.</p>
             </div>
 
             <div>
-              <h3 className="h3-style mb-3">Where we track online</h3>
+              <h3 className="h3-style mb-3">Where I track online</h3>
               <div className="flex flex-col gap-5">
                 {onSitePlatforms.map((platform) => {
                   const Logo = platform.name.startsWith("Shopify")
@@ -406,7 +406,7 @@ export default function ServicesPage() {
 
       <section className="section">
         <div className="content-wrap px-6">
-          <h2 className="h2-style mb-10">Industries We Specialize In</h2>
+          <h2 className="h2-style mb-10">Industries I Specialize In</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry) => (
               <div key={industry.name} className="bg-white rounded-2xl border border-border p-6 flex flex-col gap-2">
@@ -421,20 +421,20 @@ export default function ServicesPage() {
 
       <section className="section bg-white">
         <div className="content-wrap px-6">
-          <h2 className="h2-style mb-10">What Most Agencies Do vs What We Do</h2>
+          <h2 className="h2-style mb-10">What Most Agencies Do vs What I Do</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse min-w-[560px]">
               <thead>
                 <tr className="text-left border-b border-border">
                   <th className="py-3 pr-6 caption-copy uppercase">What most agencies do</th>
-                  <th className="py-3 caption-copy uppercase">What we do</th>
+                  <th className="py-3 caption-copy uppercase">What I do</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonRows.map((row) => (
                   <tr key={row.them} className="border-b border-border">
                     <td className="py-4 pr-6 body-copy text-neutral align-top">{row.them}</td>
-                    <td className="py-4 body-copy align-top">{row.us}</td>
+                    <td className="py-4 body-copy align-top">{row.me}</td>
                   </tr>
                 ))}
               </tbody>

@@ -33,15 +33,15 @@ export default function ContactForm() {
       });
       const data = await response.json();
       if (data.success) {
-        setResult("Thanks. We will get back to you within one business day.");
+        setResult("Thanks. I will get back to you within one business day.");
         const email = formData.get("email")?.toString();
         trackFormSubmit(generateEventId(), { email });
         form.reset();
       } else {
-        setResult("Something went wrong. Please try again or message us on WhatsApp.");
+        setResult("Something went wrong. Please try again or message me on WhatsApp.");
       }
     } catch {
-      setResult("Something went wrong. Please try again or message us on WhatsApp.");
+      setResult("Something went wrong. Please try again or message me on WhatsApp.");
     } finally {
       setSending(false);
     }
@@ -83,7 +83,7 @@ export default function ContactForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="message">Tell us about your business and goals</label>
+        <label htmlFor="message">Tell me about your business and goals</label>
         <textarea id="message" name="message" required rows={4} className="form-input resize-none" />
       </div>
 

@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Send your details for a free Google Ads and conversion tracking audit, or message us directly on WhatsApp or email.",
+    "Send your details for a free Google Ads and conversion tracking audit, or message me directly on WhatsApp or email.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -42,8 +42,8 @@ export default function ContactPage() {
       <div className="content-wrap px-6">
         <h1 className="h1-style max-w-[20ch] mb-4">Send Your Details for a Free Audit</h1>
         <p className="body-lg-copy text-neutral max-w-prose mb-10">
-          Tell us about your business and goals below, and we will reply
-          within one business day with what we see and what to fix first.
+          Tell me about your business and goals below, and I will reply
+          within one business day with what I see and what to fix first.
         </p>
 
         <div className="grid lg:grid-cols-[3fr_2fr] gap-10">
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-ink text-[15px]">Response time</p>
                   <p className="body-copy text-neutral">
-                    We reply within one business day, usually faster.
+                    I reply within one business day, usually faster.
                   </p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-ink text-[15px]">Time zones</p>
                   <p className="body-copy text-neutral">
-                    We work across UK, US, and Canada time zones.
+                    I work across UK, US, and Canada time zones.
                   </p>
                 </div>
               </div>

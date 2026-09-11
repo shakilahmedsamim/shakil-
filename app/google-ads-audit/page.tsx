@@ -48,7 +48,7 @@ const faqItems = [
   {
     question: "What exactly happens on a Google Ads audit call?",
     answer:
-      "We go through your account live, section by section: account settings and security, conversion tracking accuracy, wasted spend, ad quality, and bidding strategy, and you get a written summary of the top issues found afterward.",
+      "I go through your account live, section by section: account settings and security, conversion tracking accuracy, wasted spend, ad quality, and bidding strategy, and you get a written summary of the top issues found afterward.",
   },
   {
     question: "Is the audit really free?",

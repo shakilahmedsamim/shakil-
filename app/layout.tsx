@@ -11,6 +11,11 @@ import { site } from "@/lib/site";
 const ogImagePath = path.join(process.cwd(), "public/images/uploads/og-image.jpg");
 const ogImages = fs.existsSync(ogImagePath) ? [{ url: "/images/uploads/og-image.jpg", width: 1200, height: 630 }] : undefined;
 
+const founderPhotoExists = fs.existsSync(
+  path.join(process.cwd(), "public/images/uploads/about-founder.jpg")
+);
+const faviconUrl = founderPhotoExists ? "/images/uploads/about-founder.jpg" : "/favicon.svg";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -21,6 +26,11 @@ export const metadata: Metadata = {
     "Google Ads management with cross-platform conversion tracking (Google, Meta, TikTok, Pinterest) for local service businesses and B2B companies in the UK, US, and Canada.",
   authors: [{ name: "Shakil", url: `${site.url}/about/` }],
   alternates: { canonical: "/" },
+  icons: {
+    icon: faviconUrl,
+    shortcut: faviconUrl,
+    apple: faviconUrl,
+  },
   openGraph: {
     type: "website",
     siteName: site.name,

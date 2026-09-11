@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Is this a one-person operation or a full agency?",
     answer:
-      "PPC Shakil is run as a specialist practice rather than a large generalist agency, which means direct access to the person actually making changes in the account, not an account manager relaying requests to someone else.",
+      "It's just me, Shakil. PPC Shakil is not an agency, it's a one-person specialist practice, which means direct access to the person actually making changes in your account, not an account manager relaying requests to someone else behind the scenes.",
   },
   {
     question: "Why specialize in Google Ads and tracking instead of offering full-service marketing?",
@@ -109,7 +109,7 @@ export default function AboutPage() {
               <h2 className="h2-style">Why I Do This</h2>
               <p className="body-lg-copy text-neutral">
                 [Client to replace with a specific, first-person paragraph.
-                State the concrete problem that led to starting this agency,
+                State the concrete problem that led to starting this practice,
                 for example a pattern of accounts spending money on ads with
                 broken or missing conversion tracking, or agencies that
                 report on clicks and impressions instead of booked jobs and

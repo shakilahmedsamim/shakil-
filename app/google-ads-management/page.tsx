@@ -33,7 +33,7 @@ const ecommerceItems = [
 ];
 
 const processSteps = [
-  { title: "Account Review", body: "We look at what is already running, what is tracked correctly, and what is wasting budget." },
+  { title: "Account Review", body: "I look at what is already running, what is tracked correctly, and what is wasting budget." },
   { title: "Structure Rebuild", body: "Campaigns are organized around your services or product catalog, not left as one broad group." },
   { title: "Tracking Verification", body: "Every conversion source is checked before the account starts optimizing against it." },
   { title: "Ongoing Management", body: "Bids, budgets, and negative keywords are adjusted against real bookings or purchases." },
@@ -92,7 +92,7 @@ export default function GoogleAdsManagementPage() {
             <p className="body-lg-copy text-neutral">
               Whether you run a local service business or sell products
               online, the campaign structure, tracking, and bidding strategy
-              are different problems. We build each one the way it actually
+              are different problems. I build each one the way it actually
               needs to work.
             </p>
             <div className="flex flex-col gap-2">
@@ -101,7 +101,7 @@ export default function GoogleAdsManagementPage() {
                 <ArrowRightIcon className="w-4 h-4" />
               </Link>
               <p className="caption-copy">
-                No payment required. We will look at your current account and
+                No payment required. I will look at your current account and
                 tell you exactly what is costing you money.
               </p>
             </div>

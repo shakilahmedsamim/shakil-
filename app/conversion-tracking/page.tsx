@@ -228,7 +228,7 @@ export default function ConversionTrackingPage() {
           <p className="body-copy text-neutral max-w-prose mb-8">
             Once Google Ads tracking is verified, the same discipline
             applies to Meta, for accounts that also run it or need it
-            tracked even without us managing the ad spend.
+            tracked even without me managing the ad spend.
           </p>
           <ul className="flex flex-col gap-4 max-w-[720px]">
             {metaItems.map((item) => (

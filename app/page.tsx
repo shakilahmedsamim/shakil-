@@ -25,9 +25,9 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Google Ads Management and Conversion Tracking Agency",
+  title: "Google Ads Management and Conversion Tracking",
   description:
-    "We build and manage Google Ads campaigns with full conversion tracking across every platform you advertise on, for local service and B2B businesses in the UK, US, and Canada.",
+    "I build and manage Google Ads campaigns with full conversion tracking across every platform you advertise on, for local service and B2B businesses in the UK, US, and Canada.",
   alternates: { canonical: "/" },
 };
 
@@ -62,7 +62,7 @@ const offerCards = [
     title: "Landing Page Optimization",
     description:
       "The page an ad sends traffic to gets checked for message match, load speed, and a single clear next step, not left as an afterthought.",
-    linkLabel: "See what we check",
+    linkLabel: "See what I check",
     href: "/services/#landing-pages",
   },
 ];
@@ -110,10 +110,10 @@ const differentiators = [
 ];
 
 const steps = [
-  { title: "Free Audit", body: "We review your current account and flag exactly what is broken or wasted." },
-  { title: "Tracking Setup", body: "We install enhanced conversions, server-side tagging, and offline imports." },
-  { title: "Campaign Launch", body: "We build or restructure campaigns around your actual sales cycle." },
-  { title: "Monthly Optimization", body: "We report plainly on what closed, then adjust budget toward it." },
+  { title: "Free Audit", body: "I review your current account and flag exactly what is broken or wasted." },
+  { title: "Tracking Setup", body: "I install enhanced conversions, server-side tagging, and offline imports." },
+  { title: "Campaign Launch", body: "I build or restructure campaigns around your actual sales cycle." },
+  { title: "Monthly Optimization", body: "I report plainly on what closed, then adjust budget toward it." },
 ];
 
 const faqItems = [
@@ -125,12 +125,12 @@ const faqItems = [
   {
     question: "Do I need a Google Ads agency if I already run my own campaigns?",
     answer:
-      "You do not need an agency to run Google Ads, but most self-managed accounts we audit are missing enhanced conversions, server-side tagging, or offline conversion imports, which means the algorithm is bidding on incomplete data and wasting a portion of the budget as a result.",
+      "You do not need an agency to run Google Ads, but most self-managed accounts I audit are missing enhanced conversions, server-side tagging, or offline conversion imports, which means the algorithm is bidding on incomplete data and wasting a portion of the budget as a result.",
   },
   {
     question: "How much does conversion tracking setup cost?",
     answer:
-      "Conversion tracking setup cost depends on whether it is a standard client-side pixel and Google tag installation or a full server-side GTM container with offline conversion automation through a CRM, and we quote a specific number after the free audit once we know exactly what your account and website need.",
+      "Conversion tracking setup cost depends on whether it is a standard client-side pixel and Google tag installation or a full server-side GTM container with offline conversion automation through a CRM, and I quote a specific number after the free audit once I know exactly what your account and website need.",
   },
   {
     question: "How long does it take to see results from Google Ads?",
@@ -214,7 +214,7 @@ export default function HomePage() {
             </h1>
 
             <p className="body-lg-copy text-neutral">
-              We manage your Google Ads and build the tracking behind them,
+              I manage your Google Ads and build the tracking behind them,
               so every dollar of spend can be traced back to a real, closed
               sale, not just a click.
             </p>
@@ -261,18 +261,18 @@ export default function HomePage() {
         <div className="content-wrap px-6 flex justify-center mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border shadow-sm text-[14px] font-medium text-ink">
             <ShieldCheckIcon className="w-4 h-4 text-accent" />
-            Platforms We Build and Verify Tracking For
+            Platforms I Build and Verify Tracking For
           </span>
         </div>
         <LogoMarquee />
-        {/* Add a real, current Google Partner badge near the nav or footer once earned; not a platform we track, so it stays out of this logo row. */}
+        {/* Add a real, current Google Partner badge near the nav or footer once earned; not a platform I track, so it stays out of this logo row. */}
       </section>
 
       <section className="section pt-0">
         <div className="content-wrap px-6">
           <div className="flex justify-center mb-5">
             <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
-              What We Offer
+              What I Offer
             </span>
           </div>
           <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-10">

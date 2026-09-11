@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const bullets = [
-  "We review your current campaigns and conversion setup live",
-  "You get a written summary of the top three issues we find",
-  "No pressure and no obligation to work with us afterward",
+  "I review your current campaigns and conversion setup live",
+  "You get a written summary of the top three issues I find",
+  "No pressure and no obligation to work with me afterward",
 ];
 
 export default function BookACallPage() {
@@ -20,7 +20,7 @@ export default function BookACallPage() {
       <div className="content-wrap px-6 max-w-[860px] mx-auto text-center flex flex-col items-center gap-6">
         <h1 className="h1-style">Book Your Free 30-Minute Ad Account Audit</h1>
         <p className="body-lg-copy text-neutral max-w-prose">
-          No payment required. On this call we will look at your current
+          No payment required. On this call I will look at your current
           Google Ads account, check whether your conversion tracking is
           actually working across every platform you advertise on, and tell
           you what to fix first.

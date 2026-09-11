@@ -1,6 +1,12 @@
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { WhatsAppIcon } from "./icons";
+
+const founderPhotoExists = fs.existsSync(
+  path.join(process.cwd(), "public/images/uploads/about-founder.jpg")
+);
 
 export default function Footer() {
   return (
@@ -8,9 +14,18 @@ export default function Footer() {
       <div className="content-wrap px-6 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
           <div className="flex items-center gap-2">
-            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent text-white font-bold text-[15px] shrink-0">
-              P
-            </span>
+            {founderPhotoExists ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src="/images/uploads/about-founder.jpg"
+                alt="Shakil"
+                className="w-8 h-8 rounded-full object-cover shrink-0"
+              />
+            ) : (
+              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent text-white font-bold text-[15px] shrink-0">
+                P
+              </span>
+            )}
             <p className="text-[20px] font-bold tracking-tight text-ink">
               <span className="text-accent">PPC</span> Shakil
             </p>

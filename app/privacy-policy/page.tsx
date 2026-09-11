@@ -19,12 +19,12 @@ export default function PrivacyPolicyPage() {
           legal boilerplate.
         </p>
 
-        <h2 className="h3-style mt-8 mb-3">What we collect</h2>
+        <h2 className="h3-style mt-8 mb-3">What I collect</h2>
         <p className="body-copy text-neutral mb-4">
-          When you submit the contact form, we collect your name, business
+          When you submit the contact form, I collect your name, business
           email address, what you are currently running ads on, and the
           message you write. When you book a call through Calendly, Calendly
-          collects your name, email, and the time you select. We use this
+          collects your name, email, and the time you select. I use this
           information only to respond to your enquiry and prepare for any
           call you book.
         </p>

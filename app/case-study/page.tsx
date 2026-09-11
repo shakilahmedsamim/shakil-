@@ -7,7 +7,7 @@ import { caseStudies } from "@/lib/caseStudies";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real accounts we have worked on across the industries we specialize in, with client-approved before-and-after tracking and campaign results.",
+    "Real accounts I have worked on across the industries I specialize in, with client-approved before-and-after tracking and campaign results.",
   alternates: { canonical: "/case-study/" },
 };
 
@@ -15,12 +15,12 @@ const faqItems = [
   {
     question: "Are these case studies real accounts or hypothetical examples?",
     answer:
-      "These are real accounts the agency has worked on. Company names are withheld where confidentiality applies, and specific figures are only published once each client approves sharing them, which is why some metrics still show as pending.",
+      "These are real accounts I have worked on. Company names are withheld where confidentiality applies, and specific figures are only published once each client approves sharing them, which is why some metrics still show as pending.",
   },
   {
     question: "Why don't all case studies show specific numbers yet?",
     answer:
-      "Client-approved figures are added as each business signs off on sharing their numbers publicly, since publishing a client's cost-per-lead or revenue data without explicit approval is not something this agency does.",
+      "Client-approved figures are added as each business signs off on sharing their numbers publicly, since publishing a client's cost-per-lead or revenue data without explicit approval is not something I do.",
   },
   {
     question: "Do you have case studies outside the industries listed here?",
@@ -36,7 +36,7 @@ export default function CaseStudyPage() {
         <div className="content-wrap px-6">
           <h1 className="h1-style max-w-[22ch]">Real Accounts, Client-Approved Numbers</h1>
           <p className="body-lg-copy text-neutral max-w-prose mt-4">
-            These are real accounts the agency has worked on, with metrics
+            These are real accounts I have worked on, with metrics
             the client has approved for sharing. Company names are withheld
             where confidentiality applies, and figures are added as each
             client approves sharing them.

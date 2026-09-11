@@ -32,23 +32,23 @@ const proofPoints = [
 const comparisonRows = [
   {
     them: "One homepage sent every ad click, regardless of which ad or keyword it came from",
-    us: "Headline and hero copy matched to the exact ad group or campaign the click came from",
+    me: "Headline and hero copy matched to the exact ad group or campaign the click came from",
   },
   {
     them: "Two or three competing offers on the same screen",
-    us: "One clear call to action per screen, repeated, never diversified",
+    me: "One clear call to action per screen, repeated, never diversified",
   },
   {
     them: "A Lighthouse score checked once, then never revisited",
-    us: "Core Web Vitals checked against real mobile field data on an ongoing basis",
+    me: "Core Web Vitals checked against real mobile field data on an ongoing basis",
   },
   {
     them: "A contact form with ten fields because more data seemed better",
-    us: "Four fields or fewer, since form length is one of the highest-leverage levers on conversion rate",
+    me: "Four fields or fewer, since form length is one of the highest-leverage levers on conversion rate",
   },
   {
     them: "Tap targets and forms tested only by resizing a desktop browser",
-    us: "Tap targets, forms, and booking widgets tested on an actual phone",
+    me: "Tap targets, forms, and booking widgets tested on an actual phone",
   },
 ];
 
@@ -164,7 +164,7 @@ export default function LandingPageOptimizationPage() {
                 {comparisonRows.map((row) => (
                   <tr key={row.them} className="border-b border-border">
                     <td className="py-4 pr-6 body-copy text-neutral align-top">{row.them}</td>
-                    <td className="py-4 body-copy align-top">{row.us}</td>
+                    <td className="py-4 body-copy align-top">{row.me}</td>
                   </tr>
                 ))}
               </tbody>
