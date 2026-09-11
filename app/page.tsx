@@ -20,6 +20,7 @@ import {
   ReplyIcon,
   ShieldCheckIcon,
   ShieldIcon,
+  StarIcon,
   UpworkLogo,
   WhatsAppIcon,
 } from "@/components/icons";
@@ -199,12 +200,28 @@ export default function HomePage() {
         <div className="content-wrap grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border">
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border flex items-center gap-1.5">
+                <span className="flex" style={{ color: "#4285F4" }}>
+                  <GoogleAdsLogo className="w-3.5 h-3.5" />
+                </span>
                 Google Ads Management
               </span>
-              <span className="caption-copy px-3 py-1.5 rounded-full bg-success/10 text-success flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                5.0 Rated on Upwork &amp; Fiverr
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border flex items-center gap-1.5">
+                <span className="flex items-center gap-0.5" style={{ color: "#F5A623" }}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <StarIcon key={i} className="w-3 h-3" />
+                  ))}
+                </span>
+                5.0 on
+                <span className="flex items-center gap-1">
+                  <span className="flex" style={{ color: "#6FDA44" }}>
+                    <UpworkLogo className="w-4 h-4" />
+                  </span>
+                  <span className="text-neutral">&amp;</span>
+                  <span className="flex" style={{ color: "#1DBF73" }}>
+                    <FiverrLogo className="w-4 h-4" />
+                  </span>
+                </span>
               </span>
             </div>
 
