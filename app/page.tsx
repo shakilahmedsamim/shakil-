@@ -64,7 +64,7 @@ const offerCards = [
     description:
       "The page an ad sends traffic to gets checked for message match, load speed, and a single clear next step, not left as an afterthought.",
     linkLabel: "See what I check",
-    href: "/services/#landing-pages",
+    href: "/services/#landing-page-optimization",
   },
 ];
 

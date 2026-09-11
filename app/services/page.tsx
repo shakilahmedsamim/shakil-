@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
+import HashScrollFix from "@/components/HashScrollFix";
 import {
   GoogleAdsLogo,
   GoogleTagManagerLogo,
@@ -247,6 +248,8 @@ const faqItems = [
 export default function ServicesPage() {
   return (
     <>
+      <HashScrollFix />
+
       <section className="section pt-12 pb-8">
         <div className="content-wrap px-6">
           <h1 className="h1-style max-w-[20ch]">
@@ -262,7 +265,7 @@ export default function ServicesPage() {
 
       <section className="section pt-0">
         <div className="content-wrap px-6 grid md:grid-cols-3 gap-6 items-start">
-          <div id="google-ads-management" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+          <div id="google-ads-management" className="scroll-mt-[100px] bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-border shrink-0">
                 <span className="flex" style={{ color: "#4285F4" }}>
@@ -290,7 +293,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div id="conversion-tracking" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+          <div id="conversion-tracking" className="scroll-mt-[100px] bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-border shrink-0">
                 <span className="flex" style={{ color: "#246FDB" }}>
@@ -313,7 +316,7 @@ export default function ServicesPage() {
             </ul>
           </div>
 
-          <div id="landing-pages" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+          <div id="landing-page-optimization" className="scroll-mt-[100px] bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
                 <LayoutIcon className="w-5 h-5" />
