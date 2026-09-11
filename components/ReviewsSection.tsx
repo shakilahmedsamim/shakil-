@@ -166,7 +166,7 @@ function CardRow({ keyPrefix, ariaHidden = false }: { keyPrefix: string; ariaHid
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-semibold text-ink text-[17px]">{review.title}</h3>
+            <h3 className="font-heading font-semibold text-ink text-[17px]">{review.title}</h3>
             <p className="body-copy text-neutral">{review.quote}</p>
           </div>
 

@@ -12,6 +12,13 @@ body {
   color: #1D1D1F;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
 @layer components {
   .section {
     @apply py-14 md:py-24 px-6;
@@ -30,15 +37,15 @@ body {
   }
 
   .h1-style {
-    @apply text-hero-mobile md:text-hero-desktop text-ink;
+    @apply font-heading text-hero-mobile md:text-hero-desktop text-ink;
   }
 
   .h2-style {
-    @apply text-h2-mobile md:text-h2-desktop text-ink;
+    @apply font-heading text-h2-mobile md:text-h2-desktop text-ink;
   }
 
   .h3-style {
-    @apply text-h3-mobile md:text-h3-desktop text-ink;
+    @apply font-heading text-h3-mobile md:text-h3-desktop text-ink;
   }
 
   .body-copy {
