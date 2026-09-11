@@ -6,9 +6,9 @@ import UploadedImage from "@/components/UploadedImage";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Shakil",
+  title: "Google Ads Specialist Focused on Measurable Business Results",
   description:
-    "Shakil runs PPC Shakil, a Google Ads management and conversion tracking practice built specifically around fixing broken ad tracking and wasted ad spend for local service and B2B businesses.",
+    "Meet Shakil, a Google Ads specialist helping businesses across the UK, US, and Canada manage, optimize, and measure Google Ads campaigns with accurate conversion tracking.",
   alternates: { canonical: "/about/" },
 };
 
@@ -36,34 +36,87 @@ const personJsonLd = {
   ],
 };
 
-const faqItems = [
+const services = [
   {
-    question: "Is this a one-person operation or a full agency?",
-    answer:
-      "It's just me, Shakil. PPC Shakil is not an agency, it's a one-person specialist practice, which means direct access to the person actually making changes in your account, not an account manager relaying requests to someone else behind the scenes.",
+    title: "Google Ads Management",
+    body: "I manage and optimize Google Ads campaigns with a focus on qualified traffic, relevant search intent, and measurable business outcomes. This includes campaign structure, keyword and search-term analysis, targeting, bidding, ad performance, budget allocation, negative keywords, and ongoing optimization.",
   },
   {
-    question: "Why specialize in Google Ads and tracking instead of offering full-service marketing?",
-    answer:
-      "Diagnosing a broken pixel, a missing Enhanced Conversion, or a double-counted event is the specific, repeated work done every week, not an occasional task inside a broader retainer covering SEO, social, and design at the same time.",
+    title: "Google Ads Account Setup & Strategy",
+    body: "I help businesses build Google Ads accounts around clear goals rather than simply launching campaigns with default settings. The goal is to create a structure that makes performance easier to understand, optimize, and scale.",
   },
   {
-    question: "Which industries does PPC Shakil specialize in?",
-    answer:
-      "Home services trades such as HVAC and plumbing, legal verticals including personal injury and immigration law, medical aesthetics and cosmetic dentistry, and B2B professional and managed services, all industries where tracking accuracy and offline conversion attribution have an outsized effect on ad performance.",
+    title: "Google Ads Optimization",
+    body: "I analyze campaign and conversion data to identify where budget is being wasted, where opportunities are being missed, and which parts of an account need improvement. The focus is not on making the dashboard look better. It is on making better decisions with the available data.",
   },
   {
-    question: "Do you only work with businesses in the UK, US, and Canada?",
-    answer:
-      "Client management and reporting are scheduled around UK, US, and Canada time zones, since consistent overlap for calls and campaign changes matters more than serving every region at once.",
+    title: "Conversion Tracking",
+    body: "Accurate conversion tracking is the foundation underneath effective Google Ads management. I set up, audit, and troubleshoot conversion tracking so important actions such as leads, calls, forms, bookings, and other business conversions can be measured correctly.",
+  },
+  {
+    title: "Offline Conversion Tracking",
+    body: "For businesses where the final result happens after the initial lead, I can help connect offline outcomes back to the advertising journey. This makes it possible to understand which Google Ads leads turn into meaningful business results instead of optimizing only for the first form submission or phone call.",
   },
 ];
 
-const whatIDo = [
-  "Set up and manage Google Ads accounts so tracking is correct before the first dollar is spent",
-  "Diagnose and fix broken conversion tracking on existing accounts, so fewer leads get miscounted or lost",
-  "Build offline conversion pipelines so a closed deal that started on a phone call still counts as a real conversion",
-  "Report on cost per lead and cost per booked job in plain numbers, not platform-generated vanity metrics",
+const outcomeQuestions = [
+  "Are the right people finding the business?",
+  "Are Google Ads campaigns attracting qualified prospects?",
+  "Are important conversions being measured correctly?",
+  "Which campaigns, keywords, and search terms are producing valuable leads?",
+  "Is advertising spend being allocated toward the opportunities that matter most?",
+];
+
+const whoIWorkWith = [
+  "Already spend money on Google Ads but are unsure whether the account is being managed effectively",
+  "Are generating leads but cannot confidently measure where those leads come from",
+  "Have inconsistent or broken conversion tracking",
+  "Want a specialist focused specifically on Google Ads rather than full-service marketing",
+  "Need help understanding which campaigns and search terms are actually contributing to business results",
+  "Want a Google Ads strategy built around measurable outcomes instead of vanity metrics",
+];
+
+const faqItems = [
+  {
+    question: "Is PPC Shakil a Google Ads agency or a one-person specialist?",
+    answer:
+      "PPC Shakil is a specialist-led Google Ads practice run by Shakil. The focus is Google Ads management, optimization, strategy, and conversion tracking rather than offering a broad full-service marketing agency.",
+  },
+  {
+    question: "What does a Google Ads specialist actually do?",
+    answer:
+      "A Google Ads specialist manages and optimizes paid search campaigns based on business goals and performance data. This can include account structure, keyword research, search-term analysis, bidding, targeting, ad performance, budget allocation, conversion tracking, and ongoing optimization.",
+  },
+  {
+    question: "Why specialize in Google Ads instead of offering full-service marketing?",
+    answer:
+      "Google Ads is a specialized channel that can require constant attention to campaign structure, search intent, bidding, data, and conversion quality. By focusing primarily on Google Ads, I can concentrate on the details that directly affect paid search performance instead of trying to cover every area of marketing.",
+  },
+  {
+    question: "Does conversion tracking matter for Google Ads?",
+    answer:
+      "Yes. Google Ads performance depends heavily on the quality of the conversion data being used for measurement and optimization. If important conversions are missing, duplicated, or incorrectly configured, campaign performance can be difficult to evaluate accurately.",
+  },
+  {
+    question: "Can you help with Google Ads conversion tracking?",
+    answer:
+      "Yes. Alongside Google Ads management, I work with conversion tracking to help businesses measure important actions such as forms, calls, leads, bookings, and other conversions more accurately.",
+  },
+  {
+    question: "Do you work with businesses outside your local area?",
+    answer:
+      "Yes. I work with businesses across the UK, US, and Canada. Google Ads and conversion tracking can be managed remotely, allowing me to work with businesses regardless of where they are located within those markets.",
+  },
+  {
+    question: "What makes your approach different?",
+    answer:
+      "My approach is focused on measurable outcomes rather than vanity metrics. I look at the relationship between Google Ads activity, conversion data, and the actual business goal so that optimization decisions are based on useful information rather than surface-level platform numbers.",
+  },
+  {
+    question: "What should I expect from working with PPC Shakil?",
+    answer:
+      "You should expect a specialist focused on Google Ads performance, clear communication about what the data is showing, and a practical approach to improving campaigns and measurement. The goal is to make your Google Ads investment easier to understand and easier to optimize.",
+  },
 ];
 
 export default function AboutPage() {
@@ -79,7 +132,7 @@ export default function AboutPage() {
           {/* Upload a real founder photo to public/images/uploads/about-founder.jpg (via GitHub) and it will replace this placeholder automatically. Recommended size: 800x800px. */}
           <UploadedImage
             src="/images/uploads/about-founder.jpg"
-            alt="Founder"
+            alt="Shakil"
             className="w-full aspect-square rounded-2xl object-cover border border-border"
             fallback={
               <div className="w-full aspect-square rounded-2xl bg-white border border-dashed border-border flex flex-col items-center justify-center gap-3 overflow-hidden">
@@ -95,33 +148,93 @@ export default function AboutPage() {
 
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
-              <h1 className="h1-style">About Shakil</h1>
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
+                About Shakil
+              </span>
+              <h1 className="h1-style">
+                Google Ads Specialist Focused on Measurable Business Results
+              </h1>
               <p className="body-lg-copy text-neutral">
-                I&apos;m Shakil, and I run PPC Shakil, a Google Ads management
-                and conversion tracking practice working with local service
-                businesses and B2B companies across the UK, US, and Canada.
-                [Client to replace with a first-person paragraph naming real
-                experience, years in the field, and location context.]
+                I&apos;m Shakil, the person behind PPC Shakil. I specialize in
+                Google Ads management, optimization, strategy, and conversion
+                tracking for businesses across the UK, US, and Canada.
               </p>
             </div>
 
             <div className="flex flex-col gap-3">
-              <h2 className="h2-style">Why I Do This</h2>
+              <h2 className="h2-style">Why I Focus on Google Ads</h2>
               <p className="body-lg-copy text-neutral">
-                [Client to replace with a specific, first-person paragraph.
-                State the concrete problem that led to starting this practice,
-                for example a pattern of accounts spending money on ads with
-                broken or missing conversion tracking, or agencies that
-                report on clicks and impressions instead of booked jobs and
-                closed revenue. Keep it specific and checkable, not a
-                general statement about being passionate about marketing.]
+                Google Ads can generate demand quickly, but managing an
+                account properly requires more than turning campaigns on and
+                watching the dashboard.
+              </p>
+              <p className="body-copy text-neutral">
+                A campaign can look healthy inside Google Ads while the
+                underlying business results tell a different story. Leads may
+                be tracked incorrectly, conversions may be duplicated,
+                valuable actions may be missing, or campaigns may be
+                optimized around actions that do not represent real business
+                value.
+              </p>
+              <p className="body-copy text-neutral">
+                That&apos;s why my approach starts with the business goal and
+                works backwards. I focus on understanding what the business
+                actually wants from Google Ads, making sure the account is
+                measuring the right actions, and then using that information
+                to make better advertising decisions.
               </p>
             </div>
 
             <div className="flex flex-col gap-3">
               <h2 className="h2-style">What I Actually Do</h2>
-              <ul className="flex flex-col gap-3">
-                {whatIDo.map((item) => (
+              <div className="flex flex-col gap-5 mt-1">
+                {services.map((item) => (
+                  <div key={item.title} className="border-l-2 border-accent/25 pl-4">
+                    <p className="font-semibold text-ink text-[17px] mb-1">{item.title}</p>
+                    <p className="body-copy text-neutral">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h2 className="h2-style">What This Means for Your Business</h2>
+              <p className="body-lg-copy text-neutral">
+                When you work with a Google Ads specialist instead of a
+                generalist marketing agency, the goal is simple: your
+                advertising decisions should be based on what is actually
+                happening in the account and in the business.
+              </p>
+              <p className="body-copy text-neutral">
+                I don&apos;t believe that more clicks automatically mean
+                better performance. The important questions are:
+              </p>
+              <ul className="flex flex-col gap-2 mt-1">
+                {outcomeQuestions.map((question) => (
+                  <li key={question} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
+                    <span className="body-copy">{question}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="body-copy text-neutral mt-2">
+                Those are the questions I use to guide Google Ads management
+                and optimization. My role is to help turn Google Ads data
+                into clearer decisions, better campaign performance, and a
+                more reliable paid search system.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h2 className="h2-style">Who I Work With</h2>
+              <p className="body-lg-copy text-neutral">
+                I work with businesses in the UK, US, and Canada that use
+                Google Ads to generate leads, enquiries, calls, bookings, or
+                other measurable business opportunities. My work is
+                particularly useful for businesses that:
+              </p>
+              <ul className="flex flex-col gap-3 mt-1">
+                {whoIWorkWith.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
                     <span className="body-copy">{item}</span>
@@ -131,15 +244,19 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <h2 className="h2-style">What This Means for You</h2>
+              <h2 className="h2-style">Why PPC Shakil</h2>
               <p className="body-lg-copy text-neutral">
-                Working with a specialist instead of a generalist marketing
-                agency means faster diagnosis when tracking breaks, because
-                identifying a broken pixel or a missing enhanced conversion
-                is the specific thing I do every week, not an occasional task
-                inside a broader retainer. It also means no learning curve on
-                your account and no account manager standing between you and
-                the person actually making changes.
+                I keep the focus narrow: Google Ads first, with conversion
+                tracking supporting the data behind it. That means I can
+                spend my time understanding the details that affect paid
+                search performance rather than spreading attention across
+                every area of digital marketing.
+              </p>
+              <p className="body-copy text-neutral">
+                If your business is already investing in Google Ads, I want
+                you to know what is happening with that investment, what is
+                working, what is not, and where the next improvement should
+                come from.
               </p>
             </div>
 
