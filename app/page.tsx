@@ -359,9 +359,11 @@ export default function HomePage() {
 
       <section className="section bg-white">
         <div className="content-wrap px-6">
-          <div className="flex justify-center mb-5">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
-              How This Is Different
+          <div className="flex justify-center items-center gap-2 mb-5">
+            <span className="text-[13px] font-semibold text-accent">01</span>
+            <span className="w-[18px] h-px bg-border" />
+            <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-neutral">
+              Difference
             </span>
           </div>
           <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-3">
@@ -406,11 +408,9 @@ export default function HomePage() {
 
       <section className="section">
         <div className="content-wrap px-6">
-          <div className="flex justify-center mb-5">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
-              Case Studies
-            </span>
-          </div>
+          <p className="text-center text-[12px] font-medium uppercase tracking-[0.08em] text-accent mb-5">
+            Case Studies
+          </p>
           <h2 className="h2-style text-center max-w-[26ch] mx-auto mb-3">
             See What Changed, Industry by Industry
           </h2>
@@ -454,14 +454,12 @@ export default function HomePage() {
 
       <section className="section">
         <div className="content-wrap px-6 max-w-[860px]">
-          <div className="flex justify-center mb-5">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent">
-              Common Questions
-            </span>
+          <div className="flex items-center justify-center gap-3 mb-10">
+            <span className="w-[3px] h-8 rounded-full bg-accent shrink-0" />
+            <h2 className="h2-style text-center !mb-0">
+              The Questions I Get Asked Most
+            </h2>
           </div>
-          <h2 className="h2-style text-center mb-10">
-            The Questions I Get Asked Most
-          </h2>
           <Faq
             items={[...faqItems, ...objectionFaqItems]}
             schemaItems={[...faqItems, ...objectionFaqItems]}

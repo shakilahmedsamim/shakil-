@@ -105,8 +105,9 @@ export default function LandingPageOptimizationPage() {
       <section className="section pt-12 pb-8">
         <div className="content-wrap px-6 grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-              Landing Page Optimization
+            <span className="flex items-center gap-2">
+              <span className="w-[15px] h-[3px] rounded-full bg-accent" />
+              <span className="text-[14px] text-neutral">Landing Page Optimization</span>
             </span>
             <h1 className="h1-style">
               The Page an Ad Sends Traffic to Decides Whether It Was Worth It

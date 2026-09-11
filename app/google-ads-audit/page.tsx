@@ -88,8 +88,9 @@ export default function GoogleAdsAuditPage() {
       <section className="section pt-12 pb-8">
         <div className="content-wrap px-6 grid lg:grid-cols-[1fr_420px] gap-14 items-start">
           <div className="flex flex-col gap-6">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-              Google Ads Audit
+            <span className="flex items-center gap-2">
+              <span className="w-[15px] h-[3px] rounded-full bg-accent" />
+              <span className="text-[14px] text-neutral">Google Ads Audit</span>
             </span>
             <h1 className="h1-style max-w-[18ch]">
               What I Actually Check When I Audit a Google Ads Account

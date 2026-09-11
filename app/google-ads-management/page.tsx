@@ -83,8 +83,9 @@ export default function GoogleAdsManagementPage() {
       <section className="section pt-12 pb-8">
         <div className="content-wrap px-6 grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-              Google Ads Management
+            <span className="flex items-center gap-2">
+              <span className="w-[15px] h-[3px] rounded-full bg-accent" />
+              <span className="text-[14px] text-neutral">Google Ads Management</span>
             </span>
             <h1 className="h1-style">
               Google Ads Built Around Bookings and Purchases, Not Clicks

@@ -148,8 +148,9 @@ export default function AboutPage() {
 
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
-              <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-                About Shakil
+              <span className="flex items-center gap-2">
+                <span className="w-[15px] h-[3px] rounded-full bg-accent" />
+                <span className="text-[14px] text-neutral">About Shakil</span>
               </span>
               <h1 className="h1-style">
                 Google Ads Specialist Focused on Measurable Business Results

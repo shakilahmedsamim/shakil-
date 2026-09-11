@@ -26,7 +26,7 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
     <>
       <section className="section pt-12 pb-8">
         <div className="content-wrap px-6 max-w-[760px]">
-          <span className="caption-copy px-2.5 py-1 rounded-full bg-accent/10 text-accent w-fit inline-block mb-4">
+          <span className="caption-copy px-2.5 py-1 rounded-full border border-accent text-accent w-fit inline-block mb-4">
             {study.industry}
           </span>
           <h1 className="h1-style mb-4">{study.headline}</h1>

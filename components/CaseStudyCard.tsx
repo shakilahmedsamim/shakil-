@@ -5,7 +5,7 @@ import { ArrowRightIcon } from "./icons";
 export default function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
     <div className="rounded-2xl bg-white border border-border shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col gap-4">
-      <span className="caption-copy px-2.5 py-1 rounded-full bg-accent/10 text-accent w-fit">
+      <span className="caption-copy px-2.5 py-1 rounded-full border border-accent text-accent w-fit">
         {study.industry}
       </span>
 
