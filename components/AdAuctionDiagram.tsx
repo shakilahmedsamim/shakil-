@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheckIcon } from "./icons";
+import { CheckIcon, MegaphoneIcon } from "./icons";
 
 /**
  * Illustrative example of the Google Ads auction mechanic, grounded in
@@ -100,31 +100,33 @@ export default function AdAuctionDiagram() {
             </div>
 
             <div
-              className={`w-full rounded-xl bg-white p-4 flex flex-col gap-1.5 transition-all duration-700 ease-out ${
-                c.isYou ? "border border-border shadow-sm" : "border border-border"
+              className={`w-full rounded-2xl p-6 flex flex-col gap-3 transition-all duration-700 ease-out ${
+                c.isYou ? "bg-accent/5 border border-accent/20" : "bg-white border border-border"
               } ${revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-              style={{
-                transitionDelay: `${i * 150}ms`,
-                borderLeftWidth: c.isYou ? "4px" : "1px",
-                borderLeftColor: c.isYou ? "#0066FF" : undefined,
-              }}
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="flex items-center gap-1.5">
-                <span className="text-[10px] font-bold text-success border border-success rounded px-1 leading-4">
-                  Ad
-                </span>
-                <span className="text-[12px] text-neutral truncate">{c.url}</span>
-              </div>
-              <p className="text-[15px] font-medium text-accent leading-snug">{c.headline}</p>
-              <p className="text-[13px] text-neutral leading-snug">{c.description}</p>
-            </div>
+              <span
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-background"
+                style={{ color: "#0066FF" }}
+              >
+                <MegaphoneIcon className="w-5 h-5" />
+              </span>
 
-            <p className={`font-semibold text-[15px] ${c.isYou ? "text-accent" : "text-ink"}`}>
-              {c.name}
-            </p>
-            <div className="flex flex-col items-center gap-1 caption-copy">
-              <span>Bid: ${c.bid.toFixed(2)}</span>
-              <span style={{ color: qualityColor[c.quality] }}>Quality: {c.quality}</span>
+              <div className="flex flex-col gap-1">
+                <span className="caption-copy">{c.url}</span>
+                <p className="font-semibold text-[15px] text-ink leading-snug">{c.headline}</p>
+                <p className="body-copy text-neutral">{c.description}</p>
+              </div>
+
+              <div className="border-t border-border pt-3 flex items-center justify-between">
+                <span className={`font-semibold text-[15px] ${c.isYou ? "text-accent" : "text-ink"}`}>
+                  {c.name}
+                </span>
+                <div className="flex flex-col items-end gap-0.5 caption-copy">
+                  <span>Bid: ${c.bid.toFixed(2)}</span>
+                  <span style={{ color: qualityColor[c.quality] }}>Quality: {c.quality}</span>
+                </div>
+              </div>
             </div>
           </div>
         ))}
