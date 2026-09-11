@@ -1,4 +1,10 @@
+import fs from "fs";
+import path from "path";
 import { FiverrLogo, LinkedInLogo, StarIcon, UpworkLogo } from "./icons";
+
+const yarneAvatarExists = fs.existsSync(
+  path.join(process.cwd(), "public/images/uploads/testimonial-yarne-de-win.jpg")
+);
 
 type PlatformReview = {
   platform: "Upwork" | "Fiverr";
@@ -105,11 +111,21 @@ function CardRow({ keyPrefix, ariaHidden = false }: { keyPrefix: string; ariaHid
           clarity on performance.
         </p>
         <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-white font-semibold">Yarne de Win</p>
-            <p className="caption-copy !text-[#B0B0B5]">
-              Google Ads, CRO & Copywriting Specialist
-            </p>
+          <div className="flex items-center gap-3">
+            {yarneAvatarExists && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src="/images/uploads/testimonial-yarne-de-win.jpg"
+                alt="Yarne de Win"
+                className="w-10 h-10 rounded-full object-cover shrink-0"
+              />
+            )}
+            <div>
+              <p className="text-white font-semibold">Yarne de Win</p>
+              <p className="caption-copy !text-[#B0B0B5]">
+                Google Ads, CRO & Copywriting Specialist
+              </p>
+            </div>
           </div>
           <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white text-[13px] font-medium text-ink shrink-0">
             <span className="flex" style={{ color: "#0A66C2" }}>
